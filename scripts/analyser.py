@@ -5,8 +5,6 @@ import os
 
 # Load cleaned data
 df = pd.read_csv("../data/processed/cleaned_venues.csv")
-
-# Replace 'N/A' with actual missing values for processing
 df.replace("N/A", pd.NA, inplace=True)
 
 # Convert price_numeric and rating to numbers

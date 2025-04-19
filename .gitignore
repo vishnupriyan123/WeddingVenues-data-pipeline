@@ -1,61 +1,44 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environment
-.env/
-.venv/
-env/
+# Python virtual environments
 venv/
-ENV/
-env.bak/
-venv.bak/
+.env/
 
-# IDEs and editors
-.vscode/
-.idea/
-*.sublime-workspace
-*.sublime-project
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Logs and databases
-*.log
-*.sqlite3
-*.db
-
-# Environment variables
-.env
-
-# Build artifacts
+# Build artifacts and metadata
 build/
 dist/
 *.egg-info/
-.eggs/
 *.egg
 
-# Scrapy
-.scrapy/
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
 
-# Pytest
-.pytest_cache/
-.cache/
+# Log files
+logs/
+*.log
 
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
+# Visual output files
+*.png
+*.jpg
+*.svg
+*.pdf
 
-# MyPy
-.mypy_cache/
+# Streamlit cache and config
+.streamlit/
 
-# Data files
-data/raw/
-data/processed/
-data/plots/
+# SQLite and local databases
+*.db
+*.sqlite
 
-# System files
+# Editor settings (optional)
+.vscode/
+
+# macOS system files
 .DS_Store
+
+# Windows system files
 Thumbs.db

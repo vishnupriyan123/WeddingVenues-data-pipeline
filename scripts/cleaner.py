@@ -43,7 +43,7 @@ column_order = [
 ]
 df = df.reindex(columns=column_order)
 
-# Normalising
+# imputation
 df = df.fillna("N/A")
 
 # saving
