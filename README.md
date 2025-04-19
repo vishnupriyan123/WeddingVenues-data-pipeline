@@ -1,6 +1,6 @@
 # 🏗️ WeddingVenues Data Pipeline
 
-A complete automated data pipeline to extract, clean, enrich, visualize, and version-control wedding venue data — built with job roles like **Bridebook’s Data Engineer (Marketplace Content)** in mind.
+A complete automated data pipeline to extract, clean, enrich, visualize, and version-control wedding venue data
 
 ---
 
