@@ -3,10 +3,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json
 import re
 import os
+from datetime import datetime
 
 # Make sure data/raw and logs folders exist
 os.makedirs("../data/raw", exist_ok=True)
@@ -14,16 +17,32 @@ os.makedirs("../logs", exist_ok=True)
 
 
 # Setup browser
+
+# options = Options()
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-dev-shm-usage")
+
+# headless mode fix for gitactions
 options = Options()
+options.add_argument("--headless=new") # Comment to headless mode for local debugging
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--disable-gpu")
+options.add_argument("--window-size=1920x1080")
+options.add_argument(
+    "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+)
+options.add_argument("accept-language=en-US,en;q=0.9")
 
-driver = webdriver.Chrome(options=options)
+#driver = webdriver.Chrome(options=options)
+# fix for gitactions
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 base_url = "https://www.hitched.co.uk/busc.php?id_grupo=1&id_region=1001&showmode=list&priceType=menu&userSearch=1&showNearByListing=0&isNearby=0&NumPage="
 
 # Open the first page
 driver.get(base_url + "1")
+driver.save_screenshot("../logs/debug_screenshot.png")
 WebDriverWait(driver, 15).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "li.vendorTile"))
 )
@@ -108,13 +127,22 @@ for page in range(1, max_page + 1):
         except Exception as e:
             print("Error parsing a venue:", e)
 
-# Save all results to the raw folder
-with open("../data/raw/hitched_venues.json", "w", encoding="utf-8") as f:
+# Save timestamped version (for logging/auditing)
+today_str = datetime.now().strftime("%Y%m%d")
+timestamped_file = f"../data/raw/hitched_venues_{today_str}.json"
+
+# Save latest version (for use in dashboard tools)
+latest_file = "../data/raw/hitched_venues.json"
+
+# Save both
+with open(timestamped_file, "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
-input("Press Enter to close the browser...")
-driver.quit()
-print(f"Scraped {len(results)} venues across {max_page} pages and saved to hitched_venues.json")
+with open(latest_file, "w", encoding="utf-8") as f:
+    json.dump(results, f, indent=2, ensure_ascii=False)
 
+# logging
 with open("../logs/scraper_log.txt", "a") as log:
     log.write(f"Scraped {len(results)} venues on {time.ctime()}\n")
+
+print(f"Scraped {len(results)} venues across {max_page} pages and saved to hitched_venues.json")
