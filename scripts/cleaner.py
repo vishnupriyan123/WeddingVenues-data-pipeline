@@ -3,6 +3,7 @@ import pandas as pd
 import time
 import re
 import os
+from datetime import datetime
 
 # Make sure data/processed and logs folders exist
 os.makedirs("../data/processed", exist_ok=True)
@@ -51,9 +52,14 @@ df = df.reindex(columns=column_order)
 # imputation
 df = df.fillna("N/A")
 
-# saving
+# Save latest version (for use in dashboard tools)
 df.to_csv("../data/processed/cleaned_venues.csv", index=False)
 print("Cleaned data saved to cleaned_venues.csv")
+
+# Save timestamped version (for logging/auditing)
+timestamp = datetime.now().strftime("%Y%m%d")
+df.to_csv(f"../data/processed/cleaned_venues_{timestamp}.csv", index=False)
+print(f"Snapshot saved to cleaned_venues_{timestamp}.csv")
 
 with open("../logs/cleaner_log.txt", "a") as log:
     log.write(f"Cleaned {len(df)} rows on {time.ctime()}\n")
