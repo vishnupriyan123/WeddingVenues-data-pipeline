@@ -106,56 +106,65 @@ Supports Together AI & E2B backends (API keys required)
 
 streamlit run scripts/ai-data-viz.py
 ```
+---
 
-🧠 Ask questions like: (refer the column names and use the same column names)
-	•	“plot average price_numeric by location”
-	•	“Plot venue rating vs price”
+## ✨ AI Features
 
-✨ Features:
-	•	AI suggests chart type & titles
-	•	Multiple LLMs supported
-	•	Download charts as PNGs
+- Ask questions in plain English (e.g., _“What’s the average meal price by location?”_)
+- AI suggests chart type, titles, and formatting automatically
+- Multiple LLMs supported:
+  - Meta-LLaMA 3.1 405B / 3.3 70B
+  - DeepSeek V3
+  - Qwen 2.5 7B
+- Download any chart as a PNG in one click
 
-⸻
+---
 
-🔁 GitHub Actions: Daily Automation
-	•	Scraper + Cleaner runs daily at 4:30 AM UTC
-	•	Uploads artifacts:
-	•	hitched_venues.json / hitched_venues_<date>.json
-	•	cleaned_venues.csv / cleaned_venues_<date>.csv
-	•	scraper_log.txt, cleaner_log.txt
-	•	Commit latest cleaned_venues.csv to GitHub (timestamped files excluded via .gitignore)
+## 🔁 GitHub Actions: Daily Automation
 
-⸻
+- Scheduled to run daily at **4:30 AM UTC / 10:00 AM IST**
+- Executes:
+  - `main/scraper.py` → Scrapes latest venue listings
+  - `main/cleaner.py` → Cleans and enriches raw data
+- Automatically uploads artifacts:
+  - `hitched_venues.json`, `hitched_venues_YYYYMMDD.json`
+  - `cleaned_venues.csv`, `cleaned_venues_YYYYMMDD.csv`
+  - `scraper_log.txt`, `cleaner_log.txt`
+- Commits latest `cleaned_venues.csv` to GitHub repo
+  - Timestamped files are **excluded via `.gitignore`**
 
-🛡️ GDPR & Legal Notes
+---
 
-✅ This project is GDPR-compliant:
-	•	Only scrapes public business listings (no personal data)
-	•	Does not collect or store user-identifiable information
-	•	Logs and artifacts are for internal analysis only
+## 🛡️ GDPR & Legal Compliance
 
-⸻
+✅ This project is **GDPR-compliant**:
+- Scrapes only **public business listings** (no personal or user-generated data)
+- Does **not collect** cookies, session info, or user-identifiable metadata
+- Logging and snapshots are stored only for internal use and testing
 
-🧠 Tech Stack
-	•	Python 3.10
-	•	Selenium (ChromeDriver)
-	•	Pandas
-	•	Matplotlib / Seaborn
-	•	Streamlit
-	•	Together AI + E2B (LLMs)
-	•	GitHub Actions (CI/CD)
-	•	CRON (Automation)
+---
 
-⸻
+## 🧠 Tech Stack
 
-✅ Roadmap & What’s Next
-	•	Daily automation with GitHub Actions
-	•	Timestamped logging and snapshots
-	•	AI-powered natural language querying
-	•	Versioned clean dataset with GitHub commits
-	•	💾 Add PostgreSQL or SQLite DB integration
-	•	📈 Dashboard for profile completeness & lead scoring
-	•	🌐 Scrape other regions (multi-region support)
+- **Python 3.10**
+- **Selenium** (ChromeDriver)
+- **Pandas** (Data cleaning and analysis)
+- **Matplotlib / Seaborn** (Static visualization)
+- **Streamlit** (Interactive AI dashboard)
+- **Together AI + E2B** (LLM-powered data-to-visual)
+- **GitHub Actions + CRON** (CI/CD and daily automation)
+
+---
+
+## ✅ Roadmap & Next Steps
+
+- [x] Daily automation with **GitHub Actions**
+- [x] Timestamped logs and historical snapshots
+- [x] Natural language AI dashboard for querying
+- [x] Git versioning of `cleaned_venues.csv` (latest only)
+- [ ] 💾 Add PostgreSQL / SQLite integration
+- [ ] 📈 Dashboard for vendor profile completeness & lead scoring
+- [ ] 🌍 Add support for multi-region scraping (e.g., Europe, US)
+
 
 ⸻
