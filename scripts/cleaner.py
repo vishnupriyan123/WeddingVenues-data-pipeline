@@ -2,6 +2,11 @@ import json
 import pandas as pd
 import time
 import re
+import os
+
+# Make sure data/processed and logs folders exist
+os.makedirs("../data/processed", exist_ok=True)
+os.makedirs("../logs", exist_ok=True)
 
 # Load the JSON file
 with open("../data/raw/hitched_venues.json", "r", encoding="utf-8") as f:
