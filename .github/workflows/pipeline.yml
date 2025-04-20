@@ -2,8 +2,8 @@ name: 🛠️ Automated Wedding Data Pipeline
 
 on:
   schedule:
-    - cron: "30 4 * * *"  # Runs daily at 4:30 AM UTC = 5:30 AM BST (now in Daylight Saving) = 10:00 AM IST
-  workflow_dispatch:      # Allows manual trigger
+    - cron: "30 4 * * *"  # Daily at 4:30 AM UTC
+  workflow_dispatch:
 
 jobs:
   run-pipeline:
@@ -40,43 +40,43 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add data/processed/cleaned_venues.csv
-          git commit -m "🔁 Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes"
+          git commit -m "🔁 Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
 
-      # 🔽 Upload Artifacts 🔽
-
+      # 🔽 Upload Artifacts (latest files)
       - name: 📤 Upload cleaned CSV
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cleaned_venues.csv
           path: data/processed/cleaned_venues.csv
 
       - name: 📤 Upload raw JSON
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hitched_venues.json
           path: data/raw/hitched_venues.json
 
       - name: 📤 Upload cleaner log
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cleaner_log.txt
           path: logs/cleaner_log.txt
 
       - name: 📤 Upload scraper log
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: scraper_log.txt
           path: logs/scraper_log.txt
 
+      # 🔁 Timestamped Snapshots
       - name: 📤 Upload timestamped cleaned CSV
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cleaned_venues_${{ github.run_id }}.csv
           path: data/processed/cleaned_venues_*.csv
 
       - name: 📤 Upload timestamped scraped JSON
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hitched_venues_${{ github.run_id }}.json
           path: data/raw/hitched_venues_*.json
