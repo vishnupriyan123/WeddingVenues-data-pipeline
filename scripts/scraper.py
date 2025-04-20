@@ -10,6 +10,7 @@ import json
 import re
 import os
 from datetime import datetime
+import tempfile
 
 # Make sure data/raw and logs folders exist
 os.makedirs("../data/raw", exist_ok=True)
@@ -24,15 +25,17 @@ os.makedirs("../logs", exist_ok=True)
 
 # headless mode fix for gitactions
 options = Options()
-options.add_argument("--headless=new") # Comment to headless mode for local debugging
+options.add_argument("--headless=new")  # Required for CI
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
 options.add_argument("--window-size=1920x1080")
-options.add_argument(
-    "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
-)
+options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36")
 options.add_argument("accept-language=en-US,en;q=0.9")
+
+# Fix for user-data-dir issue
+temp_profile = tempfile.mkdtemp()
+options.add_argument(f"--user-data-dir={temp_profile}")
 
 #driver = webdriver.Chrome(options=options)
 # fix for gitactions
