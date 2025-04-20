@@ -63,7 +63,7 @@ WeddingVenues-data-pipeline/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-
+```
 
 🚀 How to Run
 
@@ -76,7 +76,7 @@ cd WeddingVenues-data-pipeline
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-
+```
 2.  Run Scraper & Cleaner
 
 python scripts/scraper.py
@@ -90,7 +90,7 @@ python scripts/cleaner.py
 ```bash
 
 python scripts/analyzer.py
-
+```
 🤖 AI-Powered Streamlit App
 
 Supports Together AI & E2B backends (API keys required)
@@ -104,7 +104,7 @@ Supports Together AI & E2B backends (API keys required)
 ```bash
 
 streamlit run scripts/ai-data-viz.py
-
+```
 
 🧠 Ask questions like: (refer the column names and use the same column names)
 	•	“plot average price_numeric by location”
