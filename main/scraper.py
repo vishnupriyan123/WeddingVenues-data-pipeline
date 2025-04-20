@@ -40,6 +40,7 @@ options.add_argument(f"--user-data-dir={temp_profile}")
 #driver = webdriver.Chrome(options=options)
 # fix for gitactions
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver.set_page_load_timeout(180)
 
 base_url = "https://www.hitched.co.uk/busc.php?id_grupo=1&id_region=1001&showmode=list&priceType=menu&userSearch=1&showNearByListing=0&isNearby=0&NumPage="
 
