@@ -132,10 +132,10 @@ for page in range(1, max_page + 1):
 
 # Save timestamped version (for logging/auditing)
 today_str = datetime.now().strftime("%Y%m%d")
-timestamped_file = f"data/raw/hitched_venues_{today_str}.json"
+timestamped_file = f"main/data/raw/hitched_venues_{today_str}.json"
 
 # Save latest version (for use in dashboard tools)
-latest_file = "data/raw/hitched_venues.json"
+latest_file = "main/data/raw/hitched_venues.json"
 
 # Save both
 with open(timestamped_file, "w", encoding="utf-8") as f:
@@ -145,7 +145,7 @@ with open(latest_file, "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
 # logging
-with open("logs/scraper_log.txt", "a") as log:
+with open("main/logs/scraper_log.txt", "a") as log:
     log.write(f"Scraped {len(results)} venues on {time.ctime()}\n")
 
 print(f"Scraped {len(results)} venues across {max_page} pages and saved to hitched_venues.json")

@@ -1,4 +1,6 @@
-name: 🛠️ Automated Wedding Data Pipeline
+![Pipeline](https://github.com/vishnupriyan123/WeddingVenues-data-pipeline/actions/workflows/pipeline.yml/badge.svg)
+
+name: Automated Wedding Data Pipeline
 
 on:
   schedule:
@@ -12,78 +14,78 @@ jobs:
       contents: write
 
     steps:
-      - name: 🔄 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: 🐍 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🧹 Ensure folders exist
+      - name: Ensure folders exist
         run: |
-          mkdir -p main/data/raw main/data/processed main/logs
+          mkdir -p main/data/raw main/data/processed logs
 
-      - name: 🧲 Run scraper
+      - name: Run scraper
         run: python main/scraper.py
 
-      - name: 🧼 Run cleaner
+      - name: Run cleaner
         run: python main/cleaner.py
 
-      - name: 💾 Commit cleaned CSV to GitHub
+      - name: Commit cleaned CSV to GitHub
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add main/data/processed/cleaned_venues.csv
-          git commit -m "🔁 Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git commit -m "Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
 
-      # 🔽 Upload Artifacts (latest files)
-      - name: 📤 Upload cleaned CSV
+      # Upload latest files into Artifacts!!!!
+      - name: Upload cleaned CSV
         uses: actions/upload-artifact@v4
         with:
           name: cleaned_venues.csv
           path: main/data/processed/cleaned_venues.csv
 
-      - name: 📤 Upload raw JSON
+      - name: Upload raw JSON
         uses: actions/upload-artifact@v4
         with:
           name: hitched_venues.json
           path: main/data/raw/hitched_venues.json
 
-      - name: 📤 Upload cleaner log
+      - name: Upload cleaner log
         uses: actions/upload-artifact@v4
         with:
           name: cleaner_log.txt
-          path: main/logs/cleaner_log.txt
+          path: logs/cleaner_log.txt
 
-      - name: 📤 Upload scraper log
+      - name: Upload scraper log
         uses: actions/upload-artifact@v4
         with:
           name: scraper_log.txt
-          path: main/logs/scraper_log.txt
+          path: logs/scraper_log.txt
 
-      # 🔁 Timestamped Snapshots
-      - name: 📤 Upload timestamped cleaned CSV
+      # Timestamped Snapshots
+      - name: Upload timestamped cleaned CSV
         uses: actions/upload-artifact@v4
         with:
           name: cleaned_venues_${{ github.run_id }}.csv
           path: main/data/processed/cleaned_venues_*.csv
 
-      - name: 📤 Upload timestamped scraped JSON
+      - name: Upload timestamped scraped JSON
         uses: actions/upload-artifact@v4
         with:
           name: hitched_venues_${{ github.run_id }}.json
           path: main/data/raw/hitched_venues_*.json
 
-      - name: 🔍 Check log contents before upload
+      - name: Check log contents before upload
         run: |
           echo "scraper_log.txt:"
-          cat main/logs/scraper_log.txt || echo "not found"
+          cat logs/scraper_log.txt || echo "not found"
           echo "cleaner_log.txt:"
-          cat main/logs/cleaner_log.txt || echo "not found"
+          cat logs/cleaner_log.txt || echo "not found"

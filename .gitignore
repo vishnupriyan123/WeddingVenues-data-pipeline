@@ -17,11 +17,16 @@ dist/
 # Jupyter notebook checkpoints
 .ipynb_checkpoints/
 
+# Project data outputs
+main/data/raw/
+main/data/processed/
+
 # Log files
-logs/
+main/logs/
 *.log
 
 # Visual output files
+main/plots/
 *.png
 *.jpg
 *.svg
