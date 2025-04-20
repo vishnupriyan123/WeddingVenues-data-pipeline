@@ -1,4 +1,4 @@
-# 🤖 Wedding Venue Data Pipeline — Automated Scraping, Cleaning & AI Visualization
+# 🤖 Wedding Venues Data Pipeline — Automated Scraping, Cleaning & AI Visualization
 
 A fully automated data pipeline for scraping, cleaning, enriching, and visualizing wedding venue data from public listings — built with Python, Selenium, and AI-powered Streamlit tools.
 
