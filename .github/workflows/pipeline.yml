@@ -1,5 +1,3 @@
-![Pipeline](https://github.com/vishnupriyan123/WeddingVenues-data-pipeline/actions/workflows/pipeline.yml/badge.svg)
-
 name: Automated Wedding Data Pipeline
 
 on:
@@ -29,7 +27,9 @@ jobs:
 
       - name: Ensure folders exist
         run: |
-          mkdir -p main/data/raw main/data/processed logs
+          mkdir -p main/data/raw
+          mkdir -p main/data/processed
+          mkdir -p main/logs
 
       - name: Run scraper
         run: python main/scraper.py
@@ -45,7 +45,7 @@ jobs:
           git commit -m "Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
 
-      # Upload latest files into Artifacts!!!!
+      # Upload latest files into Artifacts
       - name: Upload cleaned CSV
         uses: actions/upload-artifact@v4
         with:
@@ -62,15 +62,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cleaner_log.txt
-          path: logs/cleaner_log.txt
+          path: main/logs/cleaner_log.txt
 
       - name: Upload scraper log
         uses: actions/upload-artifact@v4
         with:
           name: scraper_log.txt
-          path: logs/scraper_log.txt
+          path: main/logs/scraper_log.txt
 
-      # Timestamped Snapshots
       - name: Upload timestamped cleaned CSV
         uses: actions/upload-artifact@v4
         with:
@@ -86,6 +85,6 @@ jobs:
       - name: Check log contents before upload
         run: |
           echo "scraper_log.txt:"
-          cat logs/scraper_log.txt || echo "not found"
+          cat main/logs/scraper_log.txt || echo "not found"
           echo "cleaner_log.txt:"
-          cat logs/cleaner_log.txt || echo "not found"
+          cat main/logs/cleaner_log.txt || echo "not found"
