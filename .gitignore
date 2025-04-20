@@ -1,49 +1,67 @@
-# Python virtual environments
+# -----------------------------
+# Python & Virtual Env
+# -----------------------------
 venv/
 .env/
-
-# Python cache and compiled files
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Build artifacts and metadata
+# -----------------------------
+# Build / Dist Artifacts
+# -----------------------------
 build/
 dist/
 *.egg-info/
 *.egg
 
-# Jupyter notebook checkpoints
+# -----------------------------
+# Jupyter Checkpoints
+# -----------------------------
 .ipynb_checkpoints/
 
-# Project data outputs
-main/data/raw/
-main/data/processed/
+# -----------------------------
+# Project Data
+# -----------------------------
 
-# Log files
+# Ignore all raw scraped data (JSON), keep none
+main/data/raw/*
+
+# Ignore all processed files...
+main/data/processed/*
+# ...except the main cleaned CSV (tracked by git)
+!main/data/processed/cleaned_venues.csv
+
+# -----------------------------
+# Logs
+# -----------------------------
 main/logs/
 *.log
 
-# Visual output files
+# -----------------------------
+# Output Visuals
+# -----------------------------
 main/plots/
 *.png
 *.jpg
 *.svg
 *.pdf
 
-# Streamlit cache and config
+# -----------------------------
+# Streamlit
+# -----------------------------
 .streamlit/
 
-# SQLite and local databases
+# -----------------------------
+# Local Databases
+# -----------------------------
 *.db
 *.sqlite
 
-# Editor settings (optional)
+# -----------------------------
+# Editor & System Files
+# -----------------------------
 .vscode/
-
-# macOS system files
 .DS_Store
-
-# Windows system files
 Thumbs.db
