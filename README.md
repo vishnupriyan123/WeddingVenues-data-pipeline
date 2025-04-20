@@ -133,8 +133,6 @@ streamlit run scripts/ai-data-viz.py
 	•	Only scrapes public business listings (no personal data)
 	•	Does not collect or store user-identifiable information
 	•	Logs and artifacts are for internal analysis only
-	•	Add-on disclaimer in code:
-“Scraper processes publicly available data only. No personal data is collected or stored.”
 
 ⸻
 
