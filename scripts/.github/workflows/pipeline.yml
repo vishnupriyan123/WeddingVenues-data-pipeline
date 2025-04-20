@@ -1,0 +1,42 @@
+name: 🛠️ Automated Wedding Data Pipeline
+
+on:
+  schedule:
+    - cron: "30 4 * * *"  # Every day at 4:30 AM UTC (~10 AM IST)
+  workflow_dispatch:      # Allow manual runs from GitHub UI
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🧹 Make sure folders exist
+        run: |
+          mkdir -p data/raw data/processed logs
+
+      - name: 🧲 Run scraper
+        run: python scripts/scraper.py
+
+      - name: 🧼 Run cleaner
+        run: python scripts/cleaner.py
+
+      - name: 💾 Commit updated data
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add data/processed/cleaned_venues.csv
+          git commit -m "🗂️ Auto-update: cleaned venue data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
