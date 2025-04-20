@@ -101,8 +101,7 @@ def main():
     show_full = st.checkbox("Show full dataset")
     st.dataframe(df if show_full else df.head())
 
-    query = st.text_area("What would you like to know about your data?",
-                         "Can you compare the average cost for two people between different categories?")
+    query = st.text_area("Give prompts like plot a bar graph of Top 10 Locations with average price_numeric?")
 
     if st.button("Analyze"):
         if not st.session_state.together_api_key or not st.session_state.e2b_api_key:

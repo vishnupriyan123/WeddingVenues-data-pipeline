@@ -70,17 +70,44 @@ python scripts/cleaner.py
 
 3. Analyze or Visualize
 
+📊 Static Charts (matplotlib/seaborn)
+
 python scripts/analyzer.py
+
+🤖 AI-Powered Visualization (Streamlit App)
+
+This project includes an AI-powered Streamlit application (scripts/ai-data-viz.py) that allows you to analyze and visualize your data through natural language.
+
+🔐 Requirements
+	•	Get a Together AI API Key
+	•	Get an E2B API Key
+
+▶️ Run the app:
+
 streamlit run scripts/ai-data-viz.py
+
+💡 AI Features:
+	•	Ask questions about your dataset in plain English
+	•	AI interprets your query and generates visualizations
+	•	Automatic chart type selection and styling
+	•	Supports multiple LLMs:
+	•	Meta-Llama 3.1 405B
+	•	DeepSeek V3
+	•	Qwen 2.5 7B
+	•	Meta-Llama 3.3 70B
+	•	Download any chart as PNG with one click
+
+⸻
 
 🧠 Tech Stack
 	•	Python
 	•	Selenium for scraping
 	•	Pandas for cleaning
-	•	Matplotlib / Seaborn for visuals
+	•	Matplotlib / Seaborn for static visuals
 	•	Together AI + E2B for AI chart generation
-	•	Streamlit for the dashboard
+	•	Streamlit for interactive dashboard
 	•	CRON for automation
+
 
 ⸻
 
