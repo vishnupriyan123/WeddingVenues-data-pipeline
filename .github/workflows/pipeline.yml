@@ -80,3 +80,12 @@ jobs:
         with:
           name: hitched_venues_${{ github.run_id }}.json
           path: data/raw/hitched_venues_*.json
+
+
+      - name: 🔍 Check log contents before upload
+        run:
+            echo "scraper_log.txt:"
+            cat logs/scraper_log.txt || echo "not found"
+            echo "cleaner_log.txt:"
+            cat logs/cleaner_log.txt || echo "not found"
+    

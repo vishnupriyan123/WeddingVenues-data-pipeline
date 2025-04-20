@@ -13,8 +13,8 @@ from datetime import datetime
 import tempfile
 
 # Make sure data/raw and logs folders exist
-os.makedirs("../data/raw", exist_ok=True)
-os.makedirs("../logs", exist_ok=True)
+os.makedirs("data/raw", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
 
 
 # Setup browser
@@ -45,7 +45,7 @@ base_url = "https://www.hitched.co.uk/busc.php?id_grupo=1&id_region=1001&showmod
 
 # Open the first page
 driver.get(base_url + "1")
-driver.save_screenshot("../logs/debug_screenshot.png")
+driver.save_screenshot("logs/debug_screenshot.png")
 WebDriverWait(driver, 15).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "li.vendorTile"))
 )
@@ -132,10 +132,10 @@ for page in range(1, max_page + 1):
 
 # Save timestamped version (for logging/auditing)
 today_str = datetime.now().strftime("%Y%m%d")
-timestamped_file = f"../data/raw/hitched_venues_{today_str}.json"
+timestamped_file = f"data/raw/hitched_venues_{today_str}.json"
 
 # Save latest version (for use in dashboard tools)
-latest_file = "../data/raw/hitched_venues.json"
+latest_file = "data/raw/hitched_venues.json"
 
 # Save both
 with open(timestamped_file, "w", encoding="utf-8") as f:
@@ -145,7 +145,7 @@ with open(latest_file, "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
 # logging
-with open("../logs/scraper_log.txt", "a") as log:
+with open("logs/scraper_log.txt", "a") as log:
     log.write(f"Scraped {len(results)} venues on {time.ctime()}\n")
 
 print(f"Scraped {len(results)} venues across {max_page} pages and saved to hitched_venues.json")
