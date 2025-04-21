@@ -6,11 +6,11 @@ import os
 from datetime import datetime
 
 # Make sure data/processed and logs folders exist
-os.makedirs("main/data/processed", exist_ok=True)
-os.makedirs("main/logs", exist_ok=True)
+os.makedirs("data/processed", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
 
 # Load the JSON file
-with open("main/data/raw/hitched_venues.json", "r", encoding="utf-8") as f:
+with open("data/raw/all_venues.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Convert to DataFrame
@@ -43,7 +43,7 @@ if "price_type" in cols and "price_numeric" in cols:
     df = df[cols]
 
 column_order = [
-    "name", "location", "rating", "no_of_reviews",
+    "name", "region", "location", "rating", "no_of_reviews",
     "price_text", "price_type", "price_numeric",
     "capacity", "min_capacity", "max_capacity", "url"
 ]
@@ -53,13 +53,13 @@ df = df.reindex(columns=column_order)
 df = df.fillna("N/A")
 
 # Save latest version (for use in dashboard tools)
-df.to_csv("main/data/processed/cleaned_venues.csv", index=False)
+df.to_csv("data/processed/cleaned_venues.csv", index=False)
 print("Cleaned data saved to cleaned_venues.csv")
 
 # Save timestamped version (for logging/auditing)
 timestamp = datetime.now().strftime("%Y%m%d")
-df.to_csv(f"main/data/processed/cleaned_venues_{timestamp}.csv", index=False)
+df.to_csv(f"data/processed/cleaned_venues_{timestamp}.csv", index=False)
 print(f"Snapshot saved to cleaned_venues_{timestamp}.csv")
 
-with open("main/logs/cleaner_log.txt", "a") as log:
+with open("logs/cleaner_log.txt", "a") as log:
     log.write(f"Cleaned {len(df)} rows on {time.ctime()}\n")

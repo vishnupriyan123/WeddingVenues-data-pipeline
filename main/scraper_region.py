@@ -13,12 +13,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 # Load region list
-with open("regions.json", "r") as f:
+with open("data/raw/regions.json", "r") as f:
     regions = json.load(f)
 
 # Make sure folders exist
-os.makedirs("main/data/raw", exist_ok=True)
-os.makedirs("main/logs", exist_ok=True)
+os.makedirs("data/raw", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
 
 # Set up browser
 options = Options()
@@ -38,7 +38,7 @@ driver.set_page_load_timeout(180)
 results = []
 
 for region in regions:
-    print(f"🌍 Scraping region: {region['name']}")
+    print(f"Scraping region: {region['name']}")
     base_url = region["url"] + "?page="
 
     try:
@@ -55,7 +55,7 @@ for region in regions:
             max_page = 1
 
         for page in range(1, max_page + 1):
-            url = base_url + str(page)
+            url = region["url"] + f"?page={page}"
             print(f"\t➡ Page {page} of {region['name']}")
             driver.get(url)
             WebDriverWait(driver, 15).until(
@@ -121,17 +121,18 @@ for region in regions:
                     print("\t\t⚠️ Error parsing venue:", e)
 
     except Exception as e:
-        print(f"\t❌ Failed to scrape {region['name']}: {e}")
+        print(f"\tFailed to scrape region {region['name']}: {e}")
 
 # Save files
 today = datetime.now().strftime("%Y%m%d")
-with open(f"main/data/raw/hitched_all_venues_{today}.json", "w", encoding="utf-8") as f:
+with open(f"data/raw/all_venues_{today}.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
-with open("main/data/raw/hitched_all_venues.json", "w", encoding="utf-8") as f:
+with open("data/raw/all_venues.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
-with open("main/logs/scraper_log.txt", "a") as log:
+with open("logs/scraper_log.txt", "a") as log:
     log.write(f"Scraped {len(results)} venues across {len(regions)} regions on {time.ctime()}\n")
 
 print(f"✅ Done! Scraped {len(results)} venues across {len(regions)} regions.")
+driver.quit()
