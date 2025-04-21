@@ -25,10 +25,10 @@ Inner Temple,East London,4.8,1.0,From £160,meal,160.0,"100 to 240
 Guests",100.0,240.0,https://www.hitched.co.uk/wedding-venues/the-inner-temple_4309.htm
 Garden Museum,South East London,5.0,2.0,N/A,N/A,N/A,"250
 Guests",250.0,N/A,https://www.hitched.co.uk/wedding-venues/garden-museum_189783.htm
-Gosfield Hall,East London,4.9,202.0,From £100,meal,100.0,"40 to 250
-Guests",40.0,250.0,https://www.hitched.co.uk/wedding-venues/gosfield-hall_2889.htm
 Dodford Manor - Barn Wedding Venue,North West London,5.0,250.0,From £49.75,meal,49.75,"30 to 200
 Guests",30.0,200.0,https://www.hitched.co.uk/wedding-venues/dodford-manor-barn-wedding-venue_5617.htm
+Gosfield Hall,East London,4.9,202.0,From £100,meal,100.0,"40 to 250
+Guests",40.0,250.0,https://www.hitched.co.uk/wedding-venues/gosfield-hall_2889.htm
 Kingston Estate Totnes,South West London,5.0,39.0,N/A,N/A,N/A,"60 to 400
 Guests",60.0,400.0,https://www.hitched.co.uk/wedding-venues/kingston-estate-totnes_697.htm
 Holmewood Hall,North London,4.8,64.0,From £100,meal,100.0,"40 to 350
@@ -74,10 +74,10 @@ Control Room A,"London - South West, South West London",N/A,N/A,"From £8,500",v
 Guests",30.0,220.0,https://www.hitched.co.uk/wedding-venues/control-room-a_346635.htm
 Silver Fleet,"Covent Garden, West Central London",N/A,N/A,From £190,meal,190.0,"50 to 550
 Guests",50.0,550.0,https://www.hitched.co.uk/wedding-venues/silver-fleet_348257.htm
-The White Horse,"Richmond Upon Thames, South West London",N/A,N/A,"From £1,500",venue,1500.0,"60 to 120
-Guests",60.0,120.0,https://www.hitched.co.uk/wedding-venues/the-white-horse_374903.htm
 Old Queen Street Cafe,"Westminster, South West London",N/A,N/A,"From £3,000",venue,3000.0,"12 to 100
 Guests",12.0,100.0,https://www.hitched.co.uk/wedding-venues/old-queen-street-cafe_343633.htm
+The White Horse,"Richmond Upon Thames, South West London",N/A,N/A,"From £1,500",venue,1500.0,"60 to 120
+Guests",60.0,120.0,https://www.hitched.co.uk/wedding-venues/the-white-horse_374903.htm
 The Princess of Wales,"Central London, South West London",N/A,N/A,From £30,venue,30.0,"2 to 300
 Guests",2.0,300.0,https://www.hitched.co.uk/wedding-venues/the-princess-of-wales_338409.htm
 The View London,"Covent Garden, West Central London",N/A,N/A,From £145,meal,145.0,"20 to 300
@@ -148,9 +148,9 @@ Bentley's Oyster Bar and Grill,"London - West, West London",5.0,11.0,From £85,m
 Guests",6.0,60.0,https://www.hitched.co.uk/wedding-venues/bentleys-oyster-bar-and-grill_8004.htm
 The George,"Marylebone, West Central London",N/A,N/A,From £50,meal,50.0,"15 to 200
 Guests",15.0,200.0,https://www.hitched.co.uk/wedding-venues/the-george_362119.htm
+Lucky Cat Bishopsgate,"City of London, East Central London",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,https://www.hitched.co.uk/wedding-venues/lucky-cat-bishopsgate_376541.htm
 Stanley's Chelsea,"Chelsea, South West London",N/A,N/A,From £85,venue,85.0,"8 to 150
 Guests",8.0,150.0,https://www.hitched.co.uk/wedding-venues/stanleys-chelsea_323899.htm
-Lucky Cat Bishopsgate,"City of London, East Central London",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,https://www.hitched.co.uk/wedding-venues/lucky-cat-bishopsgate_376541.htm
 Singer Tavern,"City of London, East Central London",5.0,13.0,From £100,meal,100.0,"250
 Guests",250.0,N/A,https://www.hitched.co.uk/wedding-venues/singer-tavern_7696.htm
 West Midlands Safari Park,South West London,5.0,7.0,"From £11,000",venue,11000.0,"60 to 320
@@ -178,10 +178,10 @@ Battersea Arts Centre,"Wandsworth, South West London",4.6,10.0,"From £9,000",ve
 Guests",100.0,350.0,https://www.hitched.co.uk/wedding-venues/battersea-arts-centre_6692.htm
 The Pacific Tavern,"London Bridge, East Central London",N/A,N/A,From £40,meal,40.0,"20 to 300
 Guests",20.0,300.0,https://www.hitched.co.uk/wedding-venues/the-pacific-tavern_371703.htm
-Clerkenwell Social,"London Bridge, East Central London",N/A,N/A,From £20,meal,20.0,"60 to 280
-Guests",60.0,280.0,https://www.hitched.co.uk/wedding-venues/clerkenwell-social_369421.htm
 Merrydale Manor,South West London,5.0,59.0,From £45.95,meal,45.95,"40 to 200
 Guests",40.0,200.0,https://www.hitched.co.uk/wedding-venues/merrydale-manor_198487.htm
+Clerkenwell Social,"London Bridge, East Central London",N/A,N/A,From £20,meal,20.0,"60 to 280
+Guests",60.0,280.0,https://www.hitched.co.uk/wedding-venues/clerkenwell-social_369421.htm
 Buffini Chao Deck (National Theatre),"London - South East, South East London",N/A,N/A,From £120,meal,120.0,"200
 Guests",200.0,N/A,https://www.hitched.co.uk/wedding-venues/buffini-chao-deck-national-theatre_307353.htm
 The Ministry,"London - South East, South East London",5.0,2.0,From £180,meal,180.0,"50 to 300
@@ -196,10 +196,10 @@ Bread Street Kitchen & Bar The City,"City of London, East Central London",N/A,N/
 Guests",2.0,250.0,https://www.hitched.co.uk/wedding-venues/bread-street-kitchen-&-bar-the-city_305202.htm
 The Bell in Ticehurst,South East London,5.0,196.0,From £134,meal,134.0,"30 to 90
 Guests",30.0,90.0,https://www.hitched.co.uk/wedding-venues/the-bell-in-ticehurst_2466.htm
-Darkhorse,"London - East, East London",N/A,N/A,From £25,meal,25.0,"8 to 60
-Guests",8.0,60.0,https://www.hitched.co.uk/wedding-venues/darkhorse_375611.htm
 TEMPLAR,"London - East, East London",N/A,N/A,From £25,meal,25.0,"8 to 60
 Guests",8.0,60.0,https://www.hitched.co.uk/wedding-venues/templar_373673.htm
+Darkhorse,"London - East, East London",N/A,N/A,From £25,meal,25.0,"8 to 60
+Guests",8.0,60.0,https://www.hitched.co.uk/wedding-venues/darkhorse_375611.htm
 Pétrus,"London - South West, South West London",N/A,N/A,From £150,meal,150.0,"2 to 80
 Guests",2.0,80.0,https://www.hitched.co.uk/wedding-venues/petrus_147612.htm
 The Organ Factory,"London - East, East London",N/A,N/A,"From £8,000",venue,8000.0,"100 to 750
@@ -231,36 +231,36 @@ Corrigan's Mayfair,"Kensington & Chelsea, West London",5.0,2.0,From £95,meal,95
 Guests",80.0,N/A,https://www.hitched.co.uk/wedding-venues/corrigans-mayfair_8006.htm
 The Railway,"Putney, South West London",N/A,N/A,From £90,meal,90.0,"30 to 250
 Guests",30.0,250.0,https://www.hitched.co.uk/wedding-venues/the-railway_355599.htm
+The Fable,"City of London, East Central London",5.0,3.0,From £110,meal,110.0,"80 to 800
+Guests",80.0,800.0,https://www.hitched.co.uk/wedding-venues/the-fable_6241.htm
 Hampton Court Castle,South West London,5.0,17.0,"From £9,500",meal,9500.0,"50 to 120
 Guests",50.0,120.0,https://www.hitched.co.uk/wedding-venues/hampton-court-castle_4870.htm
 The Union Club,"Covent Garden, West Central London",5.0,8.0,From £150,meal,150.0,"12 to 150
 Guests",12.0,150.0,https://www.hitched.co.uk/wedding-venues/the-union-club_4635.htm
 The Red Lion,"London - East, East London",5.0,1.0,From £100,meal,100.0,"30 to 250
 Guests",30.0,250.0,https://www.hitched.co.uk/wedding-venues/the-red-lion_377831.htm
-Nobu Hotel Shoreditch,"City of London, East Central London",N/A,N/A,From £200,meal,200.0,"10 to 250
-Guests",10.0,250.0,https://www.hitched.co.uk/wedding-venues/nobu-hotel-shoreditch_198781.htm
 The West Mill,South West London,4.9,85.0,From £43,meal,43.0,"50 to 160
 Guests",50.0,160.0,https://www.hitched.co.uk/wedding-venues/the-west-mill_6263.htm
 The Darenth,South East London,5.0,134.0,N/A,N/A,N/A,"30 to 300
 Guests",30.0,300.0,https://www.hitched.co.uk/wedding-venues/the-darenth_3783.htm
-The Fable,"City of London, East Central London",5.0,3.0,From £110,meal,110.0,"80 to 800
-Guests",80.0,800.0,https://www.hitched.co.uk/wedding-venues/the-fable_6241.htm
-The Coopers Arms,"Chelsea, South West London",N/A,N/A,N/A,N/A,N/A,"75
-Guests",75.0,N/A,https://www.hitched.co.uk/wedding-venues/coopers-arms_6794.htm
-The Mandarin Oriental Hyde Park Hotel,"London - South West, South West London",5.0,2.0,From £195,meal,195.0,"2 to 200
-Guests",2.0,200.0,https://www.hitched.co.uk/wedding-venues/the-mandarin-oriental-hyde-park-hotel_2706.htm
+Nobu Hotel Shoreditch,"City of London, East Central London",N/A,N/A,From £200,meal,200.0,"10 to 250
+Guests",10.0,250.0,https://www.hitched.co.uk/wedding-venues/nobu-hotel-shoreditch_198781.htm
 Coach House at The Dog & Fox,"Merton, South West London",4.8,2.0,From £60,venue,60.0,"10 to 150
 Guests",10.0,150.0,https://www.hitched.co.uk/wedding-venues/coach-house-at-the-dog-fox_8568.htm
+The Mandarin Oriental Hyde Park Hotel,"London - South West, South West London",5.0,2.0,From £195,meal,195.0,"2 to 200
+Guests",2.0,200.0,https://www.hitched.co.uk/wedding-venues/the-mandarin-oriental-hyde-park-hotel_2706.htm
 High House Weddings,East London,5.0,144.0,"From £5,000",venue,5000.0,"2 to 120
 Guests",2.0,120.0,https://www.hitched.co.uk/wedding-venues/high-house-weddings_6231.htm
+The Coopers Arms,"Chelsea, South West London",N/A,N/A,N/A,N/A,N/A,"75
+Guests",75.0,N/A,https://www.hitched.co.uk/wedding-venues/coopers-arms_6794.htm
 The Brewery,"City of London, East Central London",5.0,20.0,From £160,meal,160.0,"60 to 600
 Guests",60.0,600.0,https://www.hitched.co.uk/wedding-venues/the-brewery_6187.htm
 Glenmore House,South West London,5.0,215.0,From £37,meal,37.0,"140
 Guests",140.0,N/A,https://www.hitched.co.uk/wedding-venues/glenmore-house_1365.htm
-Oaks Farm,South East London,5.0,720.0,"From £2,450",venue,2450.0,"100
-Guests",100.0,N/A,https://www.hitched.co.uk/wedding-venues/oaks-farm_487.htm
 Trailfinders Sports Club,"Ealing, West London",4.9,3.0,From £60,meal,60.0,"50 to 250
 Guests",50.0,250.0,https://www.hitched.co.uk/wedding-venues/trailfinders-sports-club_275727.htm
+Oaks Farm,South East London,5.0,720.0,"From £2,450",venue,2450.0,"100
+Guests",100.0,N/A,https://www.hitched.co.uk/wedding-venues/oaks-farm_487.htm
 Stock Brook Country Club,South West London,5.0,312.0,From £95,meal,95.0,"75 to 500
 Guests",75.0,500.0,https://www.hitched.co.uk/wedding-venues/stock-brook-country-club_844.htm
 Driftwoods,"London Bridge, East Central London",N/A,N/A,From £195,meal,195.0,"60 to 195
@@ -271,14 +271,14 @@ The Phene,"Chelsea, South West London",N/A,N/A,From £48,meal,48.0,"10 to 65
 Guests",10.0,65.0,https://www.hitched.co.uk/wedding-venues/the-phene_149570.htm
 Copdock Hall,North London,5.0,17.0,"From £4,800",venue,4800.0,"20 to 180
 Guests",20.0,180.0,https://www.hitched.co.uk/wedding-venues/copdock-hall_6389.htm
-Fortnum & Mason,"City of London, East Central London",N/A,N/A,From £140,meal,140.0,"100 to 150
-Guests",100.0,150.0,https://www.hitched.co.uk/wedding-venues/fortnum-&-mason_279331.htm
+London Marriott Hotel Grosvenor Square,"Westminster, South West London",5.0,3.0,"From £12,000",venue,12000.0,"150 to 1000
+Guests",150.0,1000.0,https://www.hitched.co.uk/wedding-venues/london-marriott-hotel-grosvenor-square_3894.htm
 The Victoria,"Richmond Upon Thames, South West London",N/A,N/A,"From £6,500",venue,6500.0,"130
 Guests",130.0,N/A,https://www.hitched.co.uk/wedding-venues/the-victoria_7395.htm
 "Elaine's Bar, Restaurant and Deli","Covent Garden, West Central London",N/A,N/A,From £40,meal,40.0,"40 to 120
 Guests",40.0,120.0,https://www.hitched.co.uk/wedding-venues/elaines-bar-restaurant-and-deli_369389.htm
-London Marriott Hotel Grosvenor Square,"Westminster, South West London",5.0,3.0,"From £12,000",venue,12000.0,"150 to 1000
-Guests",150.0,1000.0,https://www.hitched.co.uk/wedding-venues/london-marriott-hotel-grosvenor-square_3894.htm
+Fortnum & Mason,"City of London, East Central London",N/A,N/A,From £140,meal,140.0,"100 to 150
+Guests",100.0,150.0,https://www.hitched.co.uk/wedding-venues/fortnum-&-mason_279331.htm
 The Glass House at ANRÁN: Luxury Boutique Venue,South West London,5.0,23.0,"From £14,000",venue,14000.0,"2 to 400
 Guests",2.0,400.0,https://www.hitched.co.uk/wedding-venues/the-glass-house-at-anra-n-luxury-boutique-venue_194603.htm
 Greenwich Yacht Club,"Greenwich, South East London",5.0,3.0,"From £3,000",venue,3000.0,"20 to 250
@@ -306,14 +306,14 @@ Blank Canvas Space at Sweet Space London,"London - North West, North West London
 Guests",90.0,180.0,https://www.hitched.co.uk/wedding-venues/blank-canvas-space-at-sweet-space-london_361673.htm
 Glaziers Hall,"London Bridge, East Central London",5.0,3.0,From £135,meal,135.0,"70 to 220
 Guests",70.0,220.0,https://www.hitched.co.uk/wedding-venues/glaziers-hall_309213.htm
-Dulwich Picture Gallery,"London - South East, South East London",4.8,10.0,"From £4,000",venue,4000.0,"10 to 120
-Guests",10.0,120.0,https://www.hitched.co.uk/wedding-venues/dulwich-picture-gallery_301918.htm
 Canova Hall,"London - South West, South West London",N/A,N/A,From £80,meal,80.0,"80 to 300
 Guests",80.0,300.0,https://www.hitched.co.uk/wedding-venues/canova-hall_353477.htm
 Park Hyatt River Thames,"Central London, South West London",N/A,N/A,From £165,meal,165.0,"30 to 300
 Guests",30.0,300.0,https://www.hitched.co.uk/wedding-venues/park-hyatt-river-thames_364895.htm
 Wilton's Music Hall,"London - East, East London",4.9,14.0,"From £8,500",venue,8500.0,"250
 Guests",250.0,N/A,https://www.hitched.co.uk/wedding-venues/wiltons-music-hall_8089.htm
+Dulwich Picture Gallery,"London - South East, South East London",4.8,10.0,"From £4,000",venue,4000.0,"10 to 120
+Guests",10.0,120.0,https://www.hitched.co.uk/wedding-venues/dulwich-picture-gallery_301918.htm
 Wandsworth Civic Suite,"Tower Hamlets, South West London",5.0,2.0,"From £3,340",venue,3340.0,"100 to 530
 Guests",100.0,530.0,https://www.hitched.co.uk/wedding-venues/the-civic-suite_2541.htm
 Aragon House,"London - East, East London",N/A,N/A,From £110,meal,110.0,"15 to 70
@@ -325,22 +325,22 @@ Guests",40.0,500.0,https://www.hitched.co.uk/wedding-venues/old-thorns-manor-hot
 Pizza East,"London - East, East London",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,https://www.hitched.co.uk/wedding-venues/pizza-east_353641.htm
 Bush Hall,"Hammersmith & Fulham, West London",5.0,3.0,"From £3,500",venue,3500.0,"90 to 350
 Guests",90.0,350.0,https://www.hitched.co.uk/wedding-venues/bush-hall_4431.htm
-Pan Pacific London,"City of London, East Central London",N/A,N/A,From £155,meal,155.0,"280
-Guests",280.0,N/A,https://www.hitched.co.uk/wedding-venues/pan-pacific-london_8977.htm
 Cutty Sark,"Greenwich, South East London",5.0,1.0,"From £9,500",venue,9500.0,"2 to 400
 Guests",2.0,400.0,https://www.hitched.co.uk/wedding-venues/cutty-sark_6696.htm
+Pan Pacific London,"City of London, East Central London",N/A,N/A,From £155,meal,155.0,"280
+Guests",280.0,N/A,https://www.hitched.co.uk/wedding-venues/pan-pacific-london_8977.htm
 Clevedon Hall,South West London,5.0,60.0,"From £5,000",venue,5000.0,"30 to 250
 Guests",30.0,250.0,https://www.hitched.co.uk/wedding-venues/clevedon-hall_5438.htm
-The Prince Albert,"Wandsworth, South West London",N/A,N/A,From £35,meal,35.0,"25 to 100
-Guests",25.0,100.0,https://www.hitched.co.uk/wedding-venues/the-prince-albert_7150.htm
-Royal Mid-Surrey Golf Club,"Richmond Upon Thames, South West London",5.0,1.0,From £100,meal,100.0,"40 to 180
-Guests",40.0,180.0,https://www.hitched.co.uk/wedding-venues/royal-mid-surrey-golf-club_8055.htm
 Farnham Castle,North London,4.9,52.0,"From £4,000",venue,4000.0,"30 to 265
 Guests",30.0,265.0,https://www.hitched.co.uk/wedding-venues/farnham-castle_7363.htm
-Regent's Events,"Covent Garden, West Central London",5.0,10.0,From £130,meal,130.0,"50 to 1000
-Guests",50.0,1000.0,https://www.hitched.co.uk/wedding-venues/regents-events_193323.htm
+Royal Mid-Surrey Golf Club,"Richmond Upon Thames, South West London",5.0,1.0,From £100,meal,100.0,"40 to 180
+Guests",40.0,180.0,https://www.hitched.co.uk/wedding-venues/royal-mid-surrey-golf-club_8055.htm
+The Prince Albert,"Wandsworth, South West London",N/A,N/A,From £35,meal,35.0,"25 to 100
+Guests",25.0,100.0,https://www.hitched.co.uk/wedding-venues/the-prince-albert_7150.htm
 The Kings Head,"London - North, North London",5.0,2.0,From £60,meal,60.0,"1 to 80
 Guests",1.0,80.0,https://www.hitched.co.uk/wedding-venues/the-kings-head_8356.htm
+Regent's Events,"Covent Garden, West Central London",5.0,10.0,From £130,meal,130.0,"50 to 1000
+Guests",50.0,1000.0,https://www.hitched.co.uk/wedding-venues/regents-events_193323.htm
 Sofitel London St James,"Westminster, South West London",5.0,8.0,From £174,meal,174.0,"10 to 120
 Guests",10.0,120.0,https://www.hitched.co.uk/wedding-venues/sofitel-london-st-james_6175.htm
 Hedsor House,South West London,5.0,129.0,"From £6,450",venue,6450.0,"150
@@ -353,20 +353,20 @@ Guests",15.0,120.0,https://www.hitched.co.uk/wedding-venues/the-county-arms_7120
 Guests",20.0,140.0,https://www.hitched.co.uk/wedding-venues/the-standard-london_305122.htm
 Fennes,North London,5.0,535.0,N/A,N/A,N/A,"50 to 700
 Guests",50.0,700.0,https://www.hitched.co.uk/wedding-venues/fennes_833.htm
+The Sail Loft,"Greenwich, South East London",N/A,N/A,From £65,meal,65.0,"20 to 150
+Guests",20.0,150.0,https://www.hitched.co.uk/wedding-venues/the-sail-loft_371199.htm
+London Marriott Hotel Maida Vale,"London - North West, North West London",5.0,6.0,"From £3,500",venue,3500.0,"50 to 120
+Guests",50.0,120.0,https://www.hitched.co.uk/wedding-venues/london-marriott-hotel-maida-vale_3922.htm
 The Clarendon Hotel,"Greenwich, South East London",4.8,6.0,From £59,meal,59.0,"25 to 200
 Guests",25.0,200.0,https://www.hitched.co.uk/wedding-venues/the-clarendon-hotel_1528.htm
 Brunswick House,"Central London, South West London",N/A,N/A,"From £3,500",venue,3500.0,"30 to 110
 Guests",30.0,110.0,https://www.hitched.co.uk/wedding-venues/brunswick-house_366681.htm
 Davy’s Wine Vaults,"Greenwich, South East London",5.0,1.0,From £35,meal,35.0,"40 to 180
 Guests",40.0,180.0,https://www.hitched.co.uk/wedding-venues/davys-wine-vaults_8402.htm
-London Marriott Hotel Maida Vale,"London - North West, North West London",5.0,6.0,"From £3,500",venue,3500.0,"50 to 120
-Guests",50.0,120.0,https://www.hitched.co.uk/wedding-venues/london-marriott-hotel-maida-vale_3922.htm
-The Sail Loft,"Greenwich, South East London",N/A,N/A,From £65,meal,65.0,"20 to 150
-Guests",20.0,150.0,https://www.hitched.co.uk/wedding-venues/the-sail-loft_371199.htm
-Bodleian Libraries,South West London,5.0,12.0,"From £2,900",venue,2900.0,"2 to 150
-Guests",2.0,150.0,https://www.hitched.co.uk/wedding-venues/the-bodleian-libraries_7031.htm
 The Guard House,"Greenwich, South East London",N/A,N/A,From £50,meal,50.0,"20 to 100
 Guests",20.0,100.0,https://www.hitched.co.uk/wedding-venues/the-guard-house_7148.htm
+Bodleian Libraries,South West London,5.0,12.0,"From £2,900",venue,2900.0,"2 to 150
+Guests",2.0,150.0,https://www.hitched.co.uk/wedding-venues/the-bodleian-libraries_7031.htm
 The Oystercatcher,"Greenwich, South East London",5.0,16.0,From £55,meal,55.0,"30 to 200
 Guests",30.0,200.0,https://www.hitched.co.uk/wedding-venues/the-oyster-catcher_8813.htm
 Crowne Plaza London Docklands,"London - East, East London",5.0,7.0,From £79,meal,79.0,"160
@@ -387,34 +387,34 @@ Bread Street Kitchen & Bar - Southwark,"London - South East, South East London",
 Guests",2.0,140.0,https://www.hitched.co.uk/wedding-venues/bread-street-kitchen-&-bar-southwark_331035.htm
 Morden Hall,South West London,5.0,55.0,"From £4,000",venue,4000.0,"50 to 150
 Guests",50.0,150.0,https://www.hitched.co.uk/wedding-venues/morden-hall_6497.htm
-The Jolly Gardeners,"London - South East, South East London",5.0,19.0,"From £5,000",venue,5000.0,"40 to 250
-Guests",40.0,250.0,https://www.hitched.co.uk/wedding-venues/the-jolly-gardeners_300586.htm
 Port Lympne Hotel & Reserve,South East London,5.0,75.0,From £199,meal,199.0,"2 to 120
 Guests",2.0,120.0,https://www.hitched.co.uk/wedding-venues/port-lympne-hotel-reserve_1246.htm
+The Jolly Gardeners,"London - South East, South East London",5.0,19.0,"From £5,000",venue,5000.0,"40 to 250
+Guests",40.0,250.0,https://www.hitched.co.uk/wedding-venues/the-jolly-gardeners_300586.htm
 The Old Kent Barn,East London,5.0,35.0,"From £4,500",venue,4500.0,"20 to 250
 Guests",20.0,250.0,https://www.hitched.co.uk/wedding-venues/the-old-kent-barn_6755.htm
 Manzi's,"Central London, South West London",N/A,N/A,From £45,venue,45.0,"20 to 100
 Guests",20.0,100.0,https://www.hitched.co.uk/wedding-venues/manzis_363587.htm
 Balfour St Barts,"City of London, East Central London",5.0,9.0,From £80,meal,80.0,"50 to 200
 Guests",50.0,200.0,https://www.hitched.co.uk/wedding-venues/balfour-st-barts_194131.htm
-The Bromley Court Hotel,South East London,5.0,93.0,From £115,meal,115.0,"10 to 250
-Guests",10.0,250.0,https://www.hitched.co.uk/wedding-venues/bromley-court-hotel_160.htm
 Browns Hotel,"London - West, West London",4.9,4.0,From £205,meal,205.0,"20 to 70
 Guests",20.0,70.0,https://www.hitched.co.uk/wedding-venues/browns-hotel_2663.htm
-Avington Park,South West London,N/A,N/A,"From £5,000",venue,5000.0,"2 to 180
-Guests",2.0,180.0,https://www.hitched.co.uk/wedding-venues/avington-park_280454.htm
+The Bromley Court Hotel,South East London,5.0,93.0,From £115,meal,115.0,"10 to 250
+Guests",10.0,250.0,https://www.hitched.co.uk/wedding-venues/bromley-court-hotel_160.htm
 Drapers' Hall,"City of London, East Central London",5.0,11.0,"From £4,000",venue,4000.0,"2 to 276
 Guests",2.0,276.0,https://www.hitched.co.uk/wedding-venues/drapers-hall_5557.htm
+Avington Park,South West London,N/A,N/A,"From £5,000",venue,5000.0,"2 to 180
+Guests",2.0,180.0,https://www.hitched.co.uk/wedding-venues/avington-park_280454.htm
 The Bedford,"Wandsworth, South West London",5.0,14.0,N/A,N/A,N/A,"150
 Guests",150.0,N/A,https://www.hitched.co.uk/wedding-venues/the-bedford_8511.htm
 Botanica Hall,"London - South West, South West London",N/A,N/A,From £80,meal,80.0,"80 to 300
 Guests",80.0,300.0,https://www.hitched.co.uk/wedding-venues/botanica-hall_353479.htm
 Enderby House,"Greenwich, South East London",5.0,1.0,From £50,meal,50.0,"1 to 60
 Guests",1.0,60.0,https://www.hitched.co.uk/wedding-venues/enderby-house_297297.htm
-Pitzhanger Manor and Gallery,"London - West, West London",4.9,3.0,"From £2,500",venue,2500.0,"5 to 90
-Guests",5.0,90.0,https://www.hitched.co.uk/wedding-venues/pitzhanger-manor-and-gallery_362733.htm
 The Stratford Hotel,"London - East, East London",N/A,N/A,From £50,meal,50.0,"1 to 250
 Guests",1.0,250.0,https://www.hitched.co.uk/wedding-venues/the-stratford-hotel_282068.htm
+Pitzhanger Manor and Gallery,"London - West, West London",4.9,3.0,"From £2,500",venue,2500.0,"5 to 90
+Guests",5.0,90.0,https://www.hitched.co.uk/wedding-venues/pitzhanger-manor-and-gallery_362733.htm
 Rowhill Grange Hotel & Utopia Spa,South East London,5.0,202.0,From £80,meal,80.0,"30 to 200
 Guests",30.0,200.0,https://www.hitched.co.uk/wedding-venues/rowhill-grange-hotel-utopia-spa_1294.htm
 The Grange,"London - West, West London",5.0,3.0,N/A,N/A,N/A,"20 to 80
@@ -427,49 +427,49 @@ Hampton Court Palace,"London - South West, South West London",5.0,2.0,"From £3,
 Guests",2.0,1500.0,https://www.hitched.co.uk/wedding-venues/hampton-court-palace_189911.htm
 MKII,"Hackney, East London",5.0,2.0,"From £1,400",venue,1400.0,"10 to 200
 Guests",10.0,200.0,https://www.hitched.co.uk/wedding-venues/mkii_194823.htm
-The Lion,South East London,5.0,17.0,"From £2,000",venue,2000.0,"20 to 150
-Guests",20.0,150.0,https://www.hitched.co.uk/wedding-venues/the-lion_8569.htm
 Wise Wedding Venue,South East London,5.0,3.0,"From £3,000",venue,3000.0,"10 to 150
 Guests",10.0,150.0,https://www.hitched.co.uk/wedding-venues/wise-wedding-venue_5332.htm
-London Marriott Hotel Regents Park,"London - North West, North West London",N/A,N/A,"From £7,500",venue,7500.0,"50 to 300
-Guests",50.0,300.0,https://www.hitched.co.uk/wedding-venues/london-marriott-hotel-regents-park_367333.htm
+The Lion,South East London,5.0,17.0,"From £2,000",venue,2000.0,"20 to 150
+Guests",20.0,150.0,https://www.hitched.co.uk/wedding-venues/the-lion_8569.htm
 Bread Street Kitchen - Limehouse,"London - East, East London",5.0,2.0,N/A,N/A,N/A,"150
 Guests",150.0,N/A,https://www.hitched.co.uk/wedding-venues/bread-street-kitchen-limehouse_353645.htm
 The Honourable Society of Lincoln's Inn,"Central London, South West London",N/A,N/A,"From £5,000",venue,5000.0,"60 to 280
 Guests",60.0,280.0,https://www.hitched.co.uk/wedding-venues/the-honourable-society-of-lincolns-inn_8228.htm
+London Marriott Hotel Regents Park,"London - North West, North West London",N/A,N/A,"From £7,500",venue,7500.0,"50 to 300
+Guests",50.0,300.0,https://www.hitched.co.uk/wedding-venues/london-marriott-hotel-regents-park_367333.htm
 Tudor Barn Eltham,"Greenwich, South East London",4.8,75.0,"From £1,250",venue,1250.0,"30 to 180
 Guests",30.0,180.0,https://www.hitched.co.uk/wedding-venues/tudor-barn-eltham_193805.htm
 The Hollywood Arms,"Chelsea, South West London",N/A,N/A,From £500,venue,500.0,"30 to 80
 Guests",30.0,80.0,https://www.hitched.co.uk/wedding-venues/the-hollywood-arms_7117.htm
-The Richmond Hill Hotel,"Richmond Upon Thames, South West London",4.9,53.0,From £84,meal,84.0,"50 to 250
-Guests",50.0,250.0,https://www.hitched.co.uk/wedding-venues/the-richmond-hill-hotel_2063.htm
-The Old Brewery,"Greenwich, South East London",N/A,N/A,N/A,N/A,N/A,"50 to 110
-Guests",50.0,110.0,https://www.hitched.co.uk/wedding-venues/the-old-brewery_297299.htm
 Dulwich College Events,"London - South East, South East London",5.0,24.0,"From £1,785",venue,1785.0,"50 to 400
 Guests",50.0,400.0,https://www.hitched.co.uk/wedding-venues/dulwich-college-events_2239.htm
+The Old Brewery,"Greenwich, South East London",N/A,N/A,N/A,N/A,N/A,"50 to 110
+Guests",50.0,110.0,https://www.hitched.co.uk/wedding-venues/the-old-brewery_297299.htm
+The Richmond Hill Hotel,"Richmond Upon Thames, South West London",4.9,53.0,From £84,meal,84.0,"50 to 250
+Guests",50.0,250.0,https://www.hitched.co.uk/wedding-venues/the-richmond-hill-hotel_2063.htm
 One Friendly Place,"London - South East, South East London",5.0,5.0,"From £4,500",venue,4500.0,"50 to 250
 Guests",50.0,250.0,https://www.hitched.co.uk/wedding-venues/one-friendly-place_348799.htm
 Sugar Studios,"Greenwich, South East London",5.0,1.0,"From £2,000",venue,2000.0,"250
 Guests",250.0,N/A,https://www.hitched.co.uk/wedding-venues/sugar-studios_329453.htm
-St Ermin's Hotel,"London - South West, South West London",5.0,10.0,From £125,meal,125.0,"60 to 150
-Guests",60.0,150.0,https://www.hitched.co.uk/wedding-venues/st-ermins-hotel_126522.htm
 The Ned,"City of London, East Central London",5.0,1.0,From £250,meal,250.0,"50 to 200
 Guests",50.0,200.0,https://www.hitched.co.uk/wedding-venues/the-ned_7160.htm
-De Vere Grand Connaught Rooms,"Kensington & Chelsea, West London",5.0,4.0,"From £7,000",venue,7000.0,"100 to 440
-Guests",100.0,440.0,https://www.hitched.co.uk/wedding-venues/de-vere-grand-connaught-rooms_4622.htm
+St Ermin's Hotel,"London - South West, South West London",5.0,10.0,From £125,meal,125.0,"60 to 150
+Guests",60.0,150.0,https://www.hitched.co.uk/wedding-venues/st-ermins-hotel_126522.htm
 Bellanger,"London - North, North London",5.0,1.0,From £55,meal,55.0,"20 to 80
 Guests",20.0,80.0,https://www.hitched.co.uk/wedding-venues/bellanger_363943.htm
+De Vere Grand Connaught Rooms,"Kensington & Chelsea, West London",5.0,4.0,"From £7,000",venue,7000.0,"100 to 440
+Guests",100.0,440.0,https://www.hitched.co.uk/wedding-venues/de-vere-grand-connaught-rooms_4622.htm
 Le Gothique,"Wandsworth, South West London",5.0,40.0,From £50,meal,50.0,"40 to 250
 Guests",40.0,250.0,https://www.hitched.co.uk/wedding-venues/le-gothique_2537.htm
-Castle Green,"Barking & Dagenham, East London",5.0,3.0,N/A,N/A,N/A,"400
-Guests",400.0,N/A,https://www.hitched.co.uk/wedding-venues/castle-green_7673.htm
 Hampton Court House,South West London,5.0,54.0,"From £4,200",venue,4200.0,"10 to 200
 Guests",10.0,200.0,https://www.hitched.co.uk/wedding-venues/hampton-court-house_5761.htm
+Castle Green,"Barking & Dagenham, East London",5.0,3.0,N/A,N/A,N/A,"400
+Guests",400.0,N/A,https://www.hitched.co.uk/wedding-venues/castle-green_7673.htm
 The Dukes Head,"Putney, South West London",5.0,9.0,From £45,meal,45.0,"15 to 120
 Guests",15.0,120.0,https://www.hitched.co.uk/wedding-venues/the-dukes-head_7119.htm
-Barnett Hill,South West London,4.9,95.0,From £100,meal,100.0,"10 to 120
-Guests",10.0,120.0,https://www.hitched.co.uk/wedding-venues/barnett-hill_2932.htm
 The Westin London City,"London - East, East London",5.0,1.0,From £140,meal,140.0,"20 to 112
 Guests",20.0,112.0,https://www.hitched.co.uk/wedding-venues/the-westin-london-city_323267.htm
+Barnett Hill,South West London,4.9,95.0,From £100,meal,100.0,"10 to 120
+Guests",10.0,120.0,https://www.hitched.co.uk/wedding-venues/barnett-hill_2932.htm
 Teatro Hall,"Ealing, West London",4.9,5.0,From £80,meal,80.0,"80 to 350
 Guests",80.0,350.0,https://www.hitched.co.uk/wedding-venues/teatro-hall_353475.htm
