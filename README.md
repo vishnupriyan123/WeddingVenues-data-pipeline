@@ -1,6 +1,10 @@
-# 🤖 Wedding Venues Data Pipeline — Automated Scraping, Cleaning & AI Visualization
+# 💍 Wedding Venues Data Pipeline (UK)
 
-A fully automated data pipeline for scraping, cleaning, enriching, and visualizing wedding venue data from public listings — built with Python, Selenium, and AI-powered Streamlit tools.
+[![Status: In Progress](https://img.shields.io/badge/status-in--progress-yellow)]()
+[![Built with Python](https://img.shields.io/badge/built%20with-python-blue)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)]()
+
+A full-stack data pipeline project scraping + enriching UK wedding venues details using Python, Selenium, Pandas, and AI. Currently under active development (multi-sprint pipeline).
 
 ---
 
@@ -167,4 +171,4 @@ streamlit run scripts/ai-data-viz.py
 - [ ] 🌍 Add support for multi-region scraping (e.g., Europe, US)
 
 
-⸻
+---
