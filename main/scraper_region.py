@@ -3,6 +3,7 @@ import os
 import re
 import time
 import tempfile
+import logging
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -12,13 +13,21 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
+# Setup logging
+os.makedirs("logs", exist_ok=True)
+logging.basicConfig(
+    filename="logs/scraper_log.txt",
+    filemode="a",
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    level=logging.INFO
+)
+
 # Load region list
 with open("data/raw/regions.json", "r") as f:
     regions = json.load(f)
 
-# Make sure folders exist
+# Ensure folders exist
 os.makedirs("data/raw", exist_ok=True)
-os.makedirs("logs", exist_ok=True)
 
 # Set up browser
 options = Options()
@@ -38,7 +47,8 @@ driver.set_page_load_timeout(180)
 results = []
 
 for region in regions:
-    print(f"Scraping region: {region['name']}")
+    print(f"🌍 Scraping region: {region['name']}")
+    logging.info("Scraping region: %s", region['name'])
     base_url = region["url"] + "?page="
 
     try:
@@ -57,6 +67,7 @@ for region in regions:
         for page in range(1, max_page + 1):
             url = region["url"] + f"?page={page}"
             print(f"\t➡ Page {page} of {region['name']}")
+            logging.info("➡ Page %d of %s", page, region["name"])
             driver.get(url)
             WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "li.vendorTile"))
@@ -118,21 +129,22 @@ for region in regions:
                     })
 
                 except Exception as e:
-                    print("\t\t⚠️ Error parsing venue:", e)
+                    logging.warning("⚠️ Error parsing venue: %s", e)
 
     except Exception as e:
-        print(f"\tFailed to scrape region {region['name']}: {e}")
+        logging.error("❌ Failed to scrape region %s: %s", region['name'], e)
 
 # Save files
 today = datetime.now().strftime("%Y%m%d")
 with open(f"data/raw/all_venues_{today}.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
+    logging.info("Saved timestamped file: all_venues_%s.json", today)
 
 with open("data/raw/all_venues.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
+    logging.info("Saved latest file: all_venues.json")
 
-with open("logs/scraper_log.txt", "a") as log:
-    log.write(f"Scraped {len(results)} venues across {len(regions)} regions on {time.ctime()}\n")
-
+logging.info("Scraped %d venues across %d regions.", len(results), len(regions))
 print(f"✅ Done! Scraped {len(results)} venues across {len(regions)} regions.")
+
 driver.quit()
