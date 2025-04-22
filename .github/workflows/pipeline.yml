@@ -31,10 +31,10 @@ jobs:
           mkdir -p main/data/processed
           mkdir -p main/logs
 
-      - name: Run scraper
-        run: python main/scraper.py
+      - name: Run scraper_region.py
+        run: python main/scraper_region.py
 
-      - name: Run cleaner
+      - name: Run cleaner.py
         run: python main/cleaner.py
 
       - name: Commit cleaned CSV to GitHub
@@ -45,7 +45,7 @@ jobs:
           git commit -m "Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
 
-      # Upload latest files into Artifacts
+      # Upload latest data artifacts
       - name: Upload cleaned CSV
         uses: actions/upload-artifact@v4
         with:
@@ -58,6 +58,7 @@ jobs:
           name: hitched_venues.json
           path: main/data/raw/hitched_venues.json
 
+      # Upload logs
       - name: Upload cleaner log
         uses: actions/upload-artifact@v4
         with:
@@ -70,6 +71,7 @@ jobs:
           name: scraper_log.txt
           path: main/logs/scraper_log.txt
 
+      # Upload timestamped versions
       - name: Upload timestamped cleaned CSV
         uses: actions/upload-artifact@v4
         with:
@@ -82,9 +84,10 @@ jobs:
           name: hitched_venues_${{ github.run_id }}.json
           path: main/data/raw/hitched_venues_*.json
 
-      - name: Check log contents before upload
+      - name: Show logs in terminal
         run: |
-          echo "scraper_log.txt:"
-          cat main/logs/scraper_log.txt || echo "not found"
-          echo "cleaner_log.txt:"
-          cat main/logs/cleaner_log.txt || echo "not found"
+          echo "Scraper Log:"
+          cat main/logs/scraper_log.txt || echo "No scraper log found"
+          echo ""
+          echo "Cleaner Log:"
+          cat main/logs/cleaner_log.txt || echo "No cleaner log found"
