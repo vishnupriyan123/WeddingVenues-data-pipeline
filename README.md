@@ -166,7 +166,11 @@ streamlit run scripts/ai-data-viz.py
 - [x] Timestamped logs and historical snapshots
 - [x] Natural language AI dashboard for querying
 - [x] Git versioning of `cleaned_venues.csv` (latest only)
-- [ ] 💾 Add PostgreSQL / SQLite integration
+- [x] Expanded regions from London to all over UK
+- [ ] Data enrichment
+- [ ] Sentiment analysis on reviews
+- [ ] 💾 Add Google Big Query integration
+- [ ] Deploying in GCP
 - [ ] 📈 Dashboard for vendor profile completeness & lead scoring
 - [ ] 🌍 Add support for multi-region scraping (e.g., Europe, US)
 
