@@ -11,7 +11,7 @@ import os
 
 # Setup Chrome options
 options = Options()
-#options.add_argument("--headless")  # or any other options you need
+options.add_argument("--headless")  # comment to see live
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
