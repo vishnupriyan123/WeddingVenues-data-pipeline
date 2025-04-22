@@ -1,26 +1,31 @@
 import json
 import pandas as pd
-import time
 import re
-import os
-import logging
+import traceback
 from datetime import datetime
+from pathlib import Path
+import logging
 
-# Make sure necessary folders exist
-os.makedirs("data/processed", exist_ok=True)
-os.makedirs("logs", exist_ok=True)
+# Setup paths using pathlib
+raw_dir = Path("data/raw")
+processed_dir = Path("data/processed")
+log_dir = Path("logs")
 
-# Set up logging
+# Ensure folders exist
+processed_dir.mkdir(parents=True, exist_ok=True)
+log_dir.mkdir(parents=True, exist_ok=True)
+
+# Setup logging
 logging.basicConfig(
-    filename="logs/cleaner_log.txt",
+    filename=log_dir / "cleaner_log.txt",
     filemode="a",
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO
 )
 
 try:
-    # Load the JSON file
-    with open("data/raw/all_venues.json", "r", encoding="utf-8") as f:
+    # Load raw data
+    with open(raw_dir / "all_venues.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     # Convert to DataFrame
@@ -28,8 +33,8 @@ try:
 
     # Fix broken URLs
     df['url'] = df['url'].str.replace(
-        "https://www.hitched.co.ukhttps://www.hitched.co.uk", 
-        "https://www.hitched.co.uk", 
+        "https://www.hitched.co.ukhttps://www.hitched.co.uk",
+        "https://www.hitched.co.uk",
         regex=False
     )
 
@@ -63,22 +68,21 @@ try:
     # Imputation
     df = df.fillna("N/A")
 
-    # Save latest version
-    latest_path = "data/processed/cleaned_venues.csv"
+    # Save latest cleaned file
+    latest_path = processed_dir / "cleaned_venues.csv"
     df.to_csv(latest_path, index=False)
     logging.info("Cleaned data saved to %s", latest_path)
 
-    # Save timestamped version
+    # Save timestamped snapshot
     timestamp = datetime.now().strftime("%Y%m%d")
-    timestamped_path = f"data/processed/cleaned_venues_{timestamp}.csv"
-    df.to_csv(timestamped_path, index=False)
-    logging.info("Snapshot saved to %s", timestamped_path)
+    snapshot_path = processed_dir / f"cleaned_venues_{timestamp}.csv"
+    df.to_csv(snapshot_path, index=False)
+    logging.info("Snapshot saved to %s", snapshot_path)
 
-    # Final log
+    # Success logs
     logging.info("Cleaned %d rows successfully", len(df))
-    print("Cleaned succesfully!")
+    print("✅ Cleaner ran successfully! Cleaned rows:", len(df))
 
-except Exception as e:
-    logging.error("Cleaner failed with error: %s", str(e))
-    print("Cleaning failed,check logs for more info.")
-    
+except Exception:
+    logging.error("Cleaner failed:\n%s", traceback.format_exc())
+    print("❌ Cleaning failed. Check logs for details.")
