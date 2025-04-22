@@ -1,11 +1,11 @@
-# 💍 Wedding Venues Data Pipeline (UK)
+# 🏗️ Wedding Venues Data Pipeline
 
 [![Status: In Progress](https://img.shields.io/badge/status-in--progress-yellow)]()
 [![Built with Python](https://img.shields.io/badge/built%20with-python-blue)]()
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)]()
 
-A full-stack data pipeline project scraping + enriching UK wedding venues details using Python, Selenium, Pandas, and AI. Currently under active development (multi-sprint pipeline).
+A complete automated data pipeline to extract, clean, enrich, visualize, and version-control wedding venue data.
 
+---
 ---
 
 ## 🚀 Features
