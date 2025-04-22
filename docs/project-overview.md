@@ -133,7 +133,7 @@ WeddingVenues-data-pipeline/
 
 ```
 
-⸻
+---
 
 **Planned Enhancements**
 - Add Google Big Query support
@@ -142,7 +142,7 @@ WeddingVenues-data-pipeline/
 - Build frontend for searchable/filterable listings
 - Send email or Slack alerts on new listings
 
-⸻
+---
 
 Author
 
