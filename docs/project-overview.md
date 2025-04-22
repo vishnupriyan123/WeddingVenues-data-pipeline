@@ -141,12 +141,14 @@ WeddingVenues-data-pipeline/
 - Add Docker container for reproducible deployments
 - Build frontend for searchable/filterable listings
 - Send email or Slack alerts on new listings
-- Deploy dashboard publicly or via internal admin panel
 
 ⸻
 
 Author
 
 Developed and maintained by @vishnupriyan123
+
+Assisted by Cord Lord! custom GPT prompt engineered by @vishnupriyan123
+https://chatgpt.com/g/g-680143e6e87c81919c7db6ede04df663-code-lord
 
 This project demonstrates modern data pipeline engineering with modular architecture, automation, and exploratory analysis capabilities.
