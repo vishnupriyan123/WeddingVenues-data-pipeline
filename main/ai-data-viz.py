@@ -70,7 +70,7 @@ IMPORTANT: Always use the dataset path variable '{dataset_path}' in your code wh
 
 def main():
     st.title("AI Data Visualization Agent 📊")
-    st.write("Ask questions about your pre-cleaned wedding venue dataset!")
+    st.write("Ask anything you want to know about the Wedding venues!")
 
     if 'together_api_key' not in st.session_state:
         st.session_state.together_api_key = ''

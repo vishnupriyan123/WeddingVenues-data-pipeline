@@ -1,0 +1,158 @@
+import re
+import os
+import time
+import json
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+
+# Target venue URL
+venue_url = "https://www.hitched.co.uk/wedding-venues/the-oak-tree-of-peover_6313.htm"
+
+# Set up headless browser
+options = Options()
+options.add_argument("--headless=new")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--window-size=1920,1080")
+options.add_argument("user-agent=Mozilla/5.0")
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+def get_faq_tags_by_title(driver, section_name):
+    try:
+        section = driver.find_element(By.XPATH, f"//h3[normalize-space(text())='{section_name}:']/following-sibling::div")
+        tags = section.find_elements(By.CSS_SELECTOR, "div.storefrontFaqs__itemList")
+        return [tag.text.strip() for tag in tags if tag.text.strip()]
+    except Exception as e:
+        print(f"⚠️ Couldn't extract tags for {section_name}: {e}")
+        return []
+
+try:
+    driver.get(venue_url)
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "h1")))
+
+    # Click read more if exists
+    try:
+        read_more = driver.find_element(By.CSS_SELECTOR, "button.storefrontDescription__link")
+        driver.execute_script("arguments[0].click();", read_more)
+        time.sleep(1)
+    except:
+        pass
+
+    # Description
+    try:
+        section = driver.find_element(By.CSS_SELECTOR, "section.storefrontDescription.app-section-highlighter-item")
+        full_description = section.text.strip()
+    except Exception as e:
+        full_description = None
+        print("⚠️ Full description extraction failed:", e)
+
+    # Address
+    try:
+        address_full = driver.find_element(By.CSS_SELECTOR, "div.storefrontAddresses__header").text.strip()
+    except:
+        address_full = None
+
+    # Map
+    try:
+        map_img = driver.find_element(By.CSS_SELECTOR, "img.app-static-map")
+        map_embed_url = map_img.get_attribute("data-src") or map_img.get_attribute("src")
+    except:
+        map_embed_url = None
+
+    # Photo Count
+    try:
+        media_button = driver.find_element(By.XPATH, "//button[contains(text(), 'View photos')]")
+        media_text = media_button.text
+        photo_count = int(re.search(r"\d+", media_text).group()) if media_text else 0
+    except:
+        photo_count = 0
+
+    # Tags from FAQs
+    venue_type_tags = get_faq_tags_by_title(driver, "Venue type")
+    dining_options = get_faq_tags_by_title(driver, "Dining options")
+    ceremony_options = get_faq_tags_by_title(driver, "Ceremony options")
+    entertainment_options = get_faq_tags_by_title(driver, "Evening entertainment")
+
+    # Social Links
+    social_links = []
+    try:
+        social_anchors = driver.find_elements(By.CSS_SELECTOR, "div.storefrontSummarySocial__list a")
+        for anchor in social_anchors:
+            href = anchor.get_attribute("href")
+            if href:
+                social_links.append(href)
+    except:
+        social_links = []
+
+    # Preferred Suppliers
+    preferred_suppliers = []
+    try:
+        supplier_tiles = driver.find_elements(By.CSS_SELECTOR, "div.storefrontEndorsedVendor__tile")
+        for tile in supplier_tiles:
+            try:
+                vendor_link = tile.find_element(By.CSS_SELECTOR, "a.storefrontEndorsedVendor__tileTitle")
+                vendor_name = vendor_link.text.strip()
+                vendor_url = vendor_link.get_attribute("href")
+            except:
+                vendor_name = None
+                vendor_url = None
+
+            try:
+                vendor_image = tile.find_element(By.CSS_SELECTOR, "picture img").get_attribute("src")
+            except:
+                vendor_image = None
+
+            try:
+                rating_element = tile.find_element(By.CSS_SELECTOR, "div.storefrontEndorsedVendor__rating")
+                rating_text = rating_element.text.strip()
+            except:
+                rating_text = None
+
+            try:
+                category_element = tile.find_element(By.CSS_SELECTOR, "div.storefrontEndorsedVendor__category")
+                category = category_element.text.strip()
+            except:
+                category = None
+
+            preferred_suppliers.append({
+                "vendor_name": vendor_name,
+                "vendor_url": vendor_url,
+                "vendor_image": vendor_image,
+                "rating_text": rating_text,
+                "category": category,
+            })
+    except Exception as e:
+        print(f"⚠️ Preferred suppliers scraping failed: {e}")
+
+    # Final output
+    venue_details = {
+        "url": venue_url,
+        "description": full_description,
+        "address_full": address_full,
+        "photo_count": photo_count,
+        "venue_type_tags": venue_type_tags,
+        "dining_options": dining_options,
+        "ceremony_options": ceremony_options,
+        "entertainment_options": entertainment_options,
+        "map_embed_url": map_embed_url,
+        "social_links": social_links,
+        "preferred_suppliers": preferred_suppliers
+    }
+
+    os.makedirs("data/raw", exist_ok=True)
+    with open("data/raw/venue_details_sample.json", "w", encoding="utf-8") as f:
+        json.dump(venue_details, f, indent=2, ensure_ascii=False)
+
+    print("✅ Scraped and saved venue details successfully!")
+
+except Exception as e:
+    print("❌ Scraping failed:", e)
+
+finally:
+    driver.quit()
