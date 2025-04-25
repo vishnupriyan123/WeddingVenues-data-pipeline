@@ -5,8 +5,8 @@ from utils.helpers import collect_regions
 
 # Setup
 driver = setup_driver()
-regions_file = "main/data/raw/regions.json"
-log_file = "main/logs/region_scraper_log.txt"
+regions_file = "data/raw/regions.json"
+log_file = "logs/region_scraper_log.txt"
 
 try:
     regions = collect_regions(driver)

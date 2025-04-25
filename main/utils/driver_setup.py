@@ -11,4 +11,3 @@ def setup_driver():
     options.add_argument("--window-size=1920,1080")
     options.add_argument("user-agent=Mozilla/5.0")
     return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-

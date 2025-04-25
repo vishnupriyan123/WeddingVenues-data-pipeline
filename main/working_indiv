@@ -109,14 +109,17 @@ try:
                 vendor_image = None
 
             try:
-                rating_element = tile.find_element(By.CSS_SELECTOR, "div.storefrontEndorsedVendor__rating")
+                # Fix: Use span, not div
+                rating_element = tile.find_element(By.CSS_SELECTOR, "span.storefrontEndorsedVendor__rating")
                 rating_text = rating_element.text.strip()
             except:
                 rating_text = None
 
             try:
-                category_element = tile.find_element(By.CSS_SELECTOR, "div.storefrontEndorsedVendor__category")
-                category = category_element.text.strip()
+                # Fix: Pull full text and split to get category
+                info_div = tile.find_element(By.CSS_SELECTOR, "div.storefrontEndorsedVendor__info")
+                info_text = info_div.text.strip()
+                category = info_text.split("·")[-1].strip() if "·" in info_text else None
             except:
                 category = None
 
@@ -128,7 +131,7 @@ try:
                 "category": category,
             })
     except Exception as e:
-        print(f"⚠️ Preferred suppliers scraping failed: {e}")
+        print(f"Error scraping preferred suppliers: {e}")
 
     # Final output
     venue_details = {

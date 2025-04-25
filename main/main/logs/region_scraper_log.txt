@@ -1,7 +1,0 @@
-[2025-04-24 19:53:35] Scraped 19 regions on Thu Apr 24 19:53:35 2025
-[2025-04-24 20:30:29] Scraped 19 regions on Thu Apr 24 20:30:29 2025
-[2025-04-24 20:31:25] ❌ Failed to scrape regions: name 'WebDriverWait' is not defined
-[2025-04-24 20:32:16] Scraped 19 regions on Thu Apr 24 20:32:16 2025
-[2025-04-24 20:33:48] Scraped 19 regions on Thu Apr 24 20:33:48 2025
-[2025-04-24 20:43:20] ❌ Failed to scrape regions: 'region_list'
-[2025-04-24 20:45:29] Scraped 19 regions on Thu Apr 24 20:45:29 2025
