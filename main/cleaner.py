@@ -30,7 +30,9 @@ try:
 
     # Convert to DataFrame
     df = pd.DataFrame(data)
-
+    #SLno
+    df.insert(0, "venue_no", ["V" + str(i) for i in range(1, len(df) + 1)])
+    
     # Fix broken URLs
     df['url'] = df['url'].str.replace(
         "https://www.hitched.co.ukhttps://www.hitched.co.uk",
@@ -59,7 +61,7 @@ try:
         df = df[cols]
 
     column_order = [
-        "name", "region", "location", "rating", "no_of_reviews",
+        "venue_no","name", "region", "location", "rating", "no_of_reviews",
         "price_text", "price_type", "price_numeric",
         "capacity", "min_capacity", "max_capacity", "url"
     ]
