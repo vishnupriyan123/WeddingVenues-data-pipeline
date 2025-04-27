@@ -1,39 +1,77 @@
+import time
+import json
+import pandas as pd
+from pathlib import Path
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-def scrape_reviews(driver, venue_url):
-    """Scrape all reviews for a venue."""
-    reviews = []
+from utils.driver_setup import setup_driver
+from utils.file_utils import save_to_json
+
+# Setup directories
+data_dir = Path("data")
+processed_dir = data_dir / "processed"
+raw_dir = data_dir / "raw"
+processed_dir.mkdir(parents=True, exist_ok=True)
+raw_dir.mkdir(parents=True, exist_ok=True)
+
+# Load the venues
+df = pd.read_csv(processed_dir / "cleaned_venues.csv")
+all_venues = df.to_dict(orient="records")
+
+# Start Selenium driver
+driver = setup_driver()
+
+# Final output
+all_reviews = []
+
+for venue in all_venues:
+    venue_no = venue.get("venue_no")
+    venue_name = venue.get("name")
+    base_url = venue.get("url")
     
+    if not base_url:
+        continue
+
+    reviews_url = base_url.replace("wedding-venues", "wedding-venues/reviews")
+    
+    print(f"🕵️‍♂️ Visiting reviews page for: {venue_name}")
+
     try:
-        # Modify URL to go to reviews page
-        if "/wedding-venues/" in venue_url and "_":
-            url_parts = venue_url.split("/wedding-venues/")
-            if len(url_parts) == 2:
-                venue_path = url_parts[1]
-                review_url = f"https://www.hitched.co.uk/wedding-venues/reviews/{venue_path}"
+        driver.get(reviews_url)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "div.storefrontReviewsTileContent"))
+        )
+        
+        time.sleep(2)  # Optional wait to fully load
+
+        review_blocks = driver.find_elements(By.CSS_SELECTOR, "div.storefrontReviewsTileContent")
+
+        for block in review_blocks:
+            try:
+                review_text = block.find_element(
+                    By.CSS_SELECTOR, 
+                    "div.storefrontReviewsTileContent__description.app-reviews-tile-read-more"
+                ).text.strip()
                 
-                # Visit the review page
-                driver.get(review_url)
-                
-                WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, "div.storefrontReviewsTileContent"))
-                )
-                
-                # Find all reviews
-                review_elements = driver.find_elements(By.CSS_SELECTOR, "div.storefrontReviewsTileContent__description.app-reviews-tile-read-more")
-                
-                for element in review_elements:
-                    review_text = element.text.strip()
-                    if review_text:
-                        reviews.append(review_text)
-            else:
-                print("Unexpected URL format, skipping reviews extraction.")
-        else:
-            print("Unexpected URL format, skipping reviews extraction.")
-            
+                all_reviews.append({
+                    "venue_no": venue_no,
+                    "venue_name": venue_name,
+                    "review_text": review_text
+                })
+
+            except Exception as e:
+                print(f"⚠️ Skipped a review block: {e}")
+
     except Exception as e:
-        print(f"Error extracting reviews: {e}")
-    
-    return reviews
+        print(f"❌ Failed to scrape reviews for {venue_name}: {e}")
+
+# Save reviews
+reviews_df = pd.DataFrame(all_reviews)
+reviews_df.to_csv(processed_dir / "venue_reviews.csv", index=False)
+
+print(f"✅ Done! Scraped {len(all_reviews)} reviews from {len(all_venues)} venues.")
+
+# Close driver
+driver.quit()
