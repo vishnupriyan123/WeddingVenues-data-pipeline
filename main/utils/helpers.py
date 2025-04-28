@@ -6,7 +6,7 @@ import time
 from .selectors import SELECTORS
 
 
-# collecting regions
+### collecting regions
 
 def collect_regions(driver):
     print("Navigating to Hitched venue listing page...")
@@ -30,73 +30,110 @@ def collect_regions(driver):
     print(f"Found {len(regions)} regions.")
     return regions
 
-# for collecting basic venues data from each region
+### for collecting venue names and essecntial data
 
-# def get_max_page(driver):
-#     try:
-#         page_buttons = driver.find_elements(By.CSS_SELECTOR, "button.pagination__itemButton")
-#         page_numbers = [int(btn.text) for btn in page_buttons if btn.text.isdigit()]
-#         return max(page_numbers) if page_numbers else 1
-#     except:
-#         return 1
-    
-# def scrape_venue_card(card):
-#     try:
-#         name = card.find_element(By.CSS_SELECTOR, "div.vendorTile__content h2").text
-#     except:
-#         name = None
+# inside utils/helpers.py
+import re
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from .selectors import SELECTORS
 
-#     try:
-#         rating = card.find_element(By.CSS_SELECTOR, "span.vendorTile__rating").text
-#         content_rating = card.find_element(By.CSS_SELECTOR, "div.vendorTile__contentRating").text
-#         match = re.search(r"\(([\d,]+)\)", content_rating)
-#         reviews = int(match.group(1).replace(",", "")) if match else None
-#     except:
-#         rating, reviews = None, None
+def get_max_page(driver):
+    """Get the maximum number of pages in a region."""
+    try:
+        page_buttons = driver.find_elements(By.CSS_SELECTOR, "button.pagination__itemButton")
+        page_numbers = [int(btn.text) for btn in page_buttons if btn.text.isdigit()]
+        return max(page_numbers) if page_numbers else 1
+    except:
+        return 1
 
-#     try:
-#         location = card.find_element(By.CSS_SELECTOR, "span.vendorTile__location").text
-#     except:
-#         location = None
+def scrape_venue_card(card, region_name):
+    """Scrape basic details of a venue from its card."""
+    try:
+        name = card.find_element(By.CSS_SELECTOR, SELECTORS["venues"]["venue_name"]).text
+    except:
+        name = None
 
-#     try:
-#         relative_link = card.find_element(By.TAG_NAME, "a").get_attribute("href")
-#         full_link = f"https://www.hitched.co.uk{relative_link}"
-#     except:
-#         full_link = None
+    try:
+        rating = card.find_element(By.CSS_SELECTOR, SELECTORS["venues"]["venue_rating"]).text
+        content_rating = card.find_element(By.CSS_SELECTOR, SELECTORS["venues"]["venue_rating_text"]).text
+        match = re.search(r"\(([\d,]+)\)", content_rating)
+        reviews = int(match.group(1).replace(",", "")) if match else None
+    except:
+        rating, reviews = None, None
 
-#     try:
-#         price_block = card.find_element(By.CSS_SELECTOR, "div.vendorTileFooter__price")
-#         price_text = price_block.text.strip()
-#         try:
-#             icon_class = price_block.find_element(By.TAG_NAME, "i").get_attribute("class")
-#             price_type = (
-#                 "meal" if "menus-price" in icon_class else
-#                 "venue" if "pricing" in icon_class else
-#                 "other"
-#             )
-#         except:
-#             price_type = None
-#     except:
-#         price_text, price_type = None, None
+    try:
+        location = card.find_element(By.CSS_SELECTOR, SELECTORS["venues"]["venue_location"]).text
+    except:
+        location = None
 
-#     try:
-#         capacity_text = card.find_element(By.CSS_SELECTOR, "div.vendorTileFooter__capacity").text
-#     except:
-#         capacity_text = None
+    try:
+        relative_link = card.find_element(By.CSS_SELECTOR, SELECTORS["venues"]["venue_link"]).get_attribute("href")
+        full_link = relative_link if relative_link.startswith("http") else f"https://www.hitched.co.uk{relative_link}"
+    except:
+        full_link = None
 
-#     return {
-#         "name": name,
-#         "rating": rating,
-#         "no_of_reviews": reviews,
-#         "location": location,
-#         "price_text": price_text,
-#         "price_type": price_type,
-#         "capacity": capacity_text,
-#         "url": full_link,
-#     }
+    try:
+        price_block = card.find_element(By.CSS_SELECTOR, SELECTORS["venues"]["venue_price_block"])
+        price_text = price_block.text.strip()
+        try:
+            icon_class = price_block.find_element(By.TAG_NAME, "i").get_attribute("class")
+            if "menus-price" in icon_class:
+                price_type = "meal"
+            elif "pricing" in icon_class:
+                price_type = "venue"
+            else:
+                price_type = "other"
+        except:
+            price_type = None
+    except:
+        price_text, price_type = None, None
 
-# for collecting  individual venue datas
+    try:
+        capacity_text = card.find_element(By.CSS_SELECTOR, SELECTORS["venues"]["venue_capacity"]).text
+    except:
+        capacity_text = None
+
+    return {
+        "region": region_name,
+        "name": name,
+        "rating": rating,
+        "no_of_reviews": reviews,
+        "location": location,
+        "price_text": price_text,
+        "price_type": price_type,
+        "capacity": capacity_text,
+        "url": full_link
+    }
+
+def scrape_region(driver, region):
+    """Scrape all venues from a region (pagination handled)."""
+    venues = []
+    base_url = region["url"]
+    driver.get(base_url + "?page=1")
+    WebDriverWait(driver, 15).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, SELECTORS["venues"]["venue_list_item"]))
+    )
+    max_page = get_max_page(driver)
+
+    for page in range(1, max_page + 1):
+        page_url = f"{base_url}?page={page}"
+        print(f"\t➡ Page {page} of {region['name']}")
+        driver.get(page_url)
+        WebDriverWait(driver, 15).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, SELECTORS["venues"]["venue_list_item"]))
+        )
+        cards = driver.find_elements(By.CSS_SELECTOR, SELECTORS["venues"]["venue_list_item"])
+        for card in cards:
+            try:
+                venue = scrape_venue_card(card, region["name"])
+                venues.append(venue)
+            except Exception as e:
+                print(f"⚠️ Failed to scrape venue on {region['name']}: {e}")
+    return venues
+
+### for collecting  individual venue details
 
 def click_read_more(driver):
     try:
@@ -210,3 +247,38 @@ def extract_suppliers(driver, selectors):
         print(f"❌ Failed to load supplier tiles: {e}")
     
     return preferred_suppliers
+
+### scraping reviews
+
+def click_all_read_more_buttons(driver, button_selector="button.app-read-more-link"):
+    """
+    Clicks all 'Read more' buttons to expand hidden content.
+    """
+    try:
+        read_more_buttons = driver.find_elements(By.CSS_SELECTOR, button_selector)
+        for btn in read_more_buttons:
+            try:
+                driver.execute_script("arguments[0].click();", btn)
+                time.sleep(0.2)  # Small pause to let content expand
+            except Exception as click_e:
+                print(f"⚠️ Couldn't click a 'Read more' button: {click_e}")
+    except Exception as e:
+        print(f"⚠️ Couldn't find 'Read more' buttons: {e}")
+
+def extract_reviews(driver, review_block_selector="div.storefrontReviewsTileContent", review_text_selector="div.storefrontReviewsTileContent__description.app-reviews-tile-read-more"):
+    """
+    Extracts all reviews after expanding the read more buttons.
+    """
+    reviews = []
+    try:
+        review_blocks = driver.find_elements(By.CSS_SELECTOR, review_block_selector)
+        for block in review_blocks:
+            try:
+                review_text = block.find_element(By.CSS_SELECTOR, review_text_selector).text.strip()
+                reviews.append(review_text)
+            except Exception as e:
+                print(f"⚠️ Skipped a review block: {e}")
+    except Exception as e:
+        print(f"⚠️ Failed to find review blocks: {e}")
+
+    return reviews
