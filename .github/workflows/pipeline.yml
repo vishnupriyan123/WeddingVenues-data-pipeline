@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -49,11 +49,23 @@ jobs:
 
       - name: Commit cleaned data to GitHub
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add main/data/processed/*.csv
-          git commit -m "Auto-update: Cleaned data run ID ${{ github.run_id }} on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          
+          # Add the specific files you want to commit
+          git add main/data/processed/venue_reviews.csv \
+                  main/data/processed/cleaned_venues_suppliers.csv \
+                  main/data/processed/cleaned_venues_details.csv \
+                  main/data/processed/cleaned_venues.csv \
+                  main/data/processed/cleaned_venues_deals.csv
+          
+          # Commit the changes
+          git commit -m "Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          
+          # Ensure the latest changes are pulled before pushing
           git pull --rebase
+          
+          # Push the changes
           git push
 
       - name: Upload Artifacts
@@ -64,3 +76,25 @@ jobs:
             main/data/raw/
             main/data/processed/
             main/logs/
+
+      # Upload timestamped files
+      - name: Upload timestamped cleaned CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: cleaned_venues_${{ github.run_id }}.csv
+          path: main/data/processed/cleaned_venues_*.csv
+
+      - name: Upload timestamped scraped JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: hitched_venues_${{ github.run_id }}.json
+          path: main/data/raw/hitched_venues_*.json
+
+      - name: Check log contents before upload
+        run: |
+          echo "scraper_log.txt:"
+          cat logs/scraper_log.txt || echo "not found"
+          cat main/logs/scraper_log.txt || echo "not found"
+          echo "cleaner_log.txt:"
+          cat logs/cleaner_log.txt || echo "not found"
+          cat main/logs/cleaner_log.txt || echo "not found"

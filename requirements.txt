@@ -11,3 +11,9 @@ Pillow==10.4.0
 together==1.3.10
 e2b==1.0.5
 e2b-code-interpreter==1.0.3
+
+#ml
+transformers==4.28.0
+torch==2.0.1
+tensorflow
+tf-keras
