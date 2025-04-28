@@ -110,8 +110,8 @@ for venue in tqdm(all_venues, desc="Scraping full venue details"):
 
 # Save final data
 today = datetime.now().strftime("%Y%m%d_%H%M%S")
-timestamped_file = backup_dir / f"venue_all_details_{today}.json"
-latest_file = raw_dir / "venue_all_details.json"
+timestamped_file = backup_dir / f"venues_details_{today}.json"
+latest_file = raw_dir / "venues_details.json"
 
 save_to_json(venue_details_list, timestamped_file)
 save_to_json(venue_details_list, latest_file)

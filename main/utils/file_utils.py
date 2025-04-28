@@ -9,7 +9,7 @@ class Directories:
         self.processed_dir = self.data_dir / "processed"
         self.raw_dir = self.data_dir / "raw"
         self.log_dir = Path("logs")
-        self.backup_dir = self.raw_dir / "backups"
+        self.backup_dir = self.data_dir / "backups"
 
         for folder in [self.processed_dir, self.raw_dir, self.log_dir, self.backup_dir]:
             folder.mkdir(parents=True, exist_ok=True)

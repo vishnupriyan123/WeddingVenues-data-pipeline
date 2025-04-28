@@ -4,13 +4,13 @@ from pathlib import Path
 from utils.file_utils import save_to_json, log_message
 
 # Setup paths
-input_path = Path("data/raw/venue_all_details.json")
+input_path = Path("data/raw/venues_details.json")
 output_dir = Path("data/processed")
 log_file = Path("logs/cleaner_log.txt")
 
-venue_csv_path = output_dir / "venue_cleaned.csv"
-supplier_csv_path = output_dir / "venue_suppliers.csv"
-deal_csv_path = output_dir / "venue_deals.csv"
+venue_csv_path = output_dir / "cleaned_venues_details.csv"
+supplier_csv_path = output_dir / "cleaned_venues_suppliers.csv"
+deal_csv_path = output_dir / "cleaned_venues_deals.csv"
 
 output_dir.mkdir(parents=True, exist_ok=True)
 

@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
@@ -27,67 +27,40 @@ jobs:
 
       - name: Ensure folders exist
         run: |
-          mkdir -p main/data/raw
-          mkdir -p main/data/processed
-          mkdir -p main/logs
+          mkdir -p main/data/raw main/data/processed main/logs main/data/backup
 
-      - name: Run scraper_region.py
-        run: python main/scraper_region.py
+      - name: Run Region Scraper
+        run: python main/regions_scraper.py
 
-      - name: Run cleaner.py
-        run: python main/cleaner.py
+      - name: Run Venues Scraper
+        run: python main/venues_scraper.py
 
-      - name: Commit cleaned CSV to GitHub
+      - name: Run Venues Cleaner
+        run: python main/venues_cleaner.py
+
+      - name: Run Venue Details Scraper
+        run: python main/venues_details_scraper.py
+
+      - name: Run Venue Details Cleaner
+        run: python main/venues_details_cleaner.py
+
+      - name: Run Venue Reviews Scraper
+        run: python main/venues_reviews_scraper.py
+
+      - name: Commit cleaned data to GitHub
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add main/data/processed/cleaned_venues.csv
-          git commit -m "Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add main/data/processed/*.csv
+          git commit -m "Auto-update: Cleaned data run ID ${{ github.run_id }} on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git pull --rebase
           git push
 
-      # Upload latest data artifacts
-      - name: Upload cleaned CSV
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: cleaned_venues.csv
-          path: main/data/processed/cleaned_venues.csv
-
-      - name: Upload raw JSON
-        uses: actions/upload-artifact@v4
-        with:
-          name: hitched_venues.json
-          path: main/data/raw/hitched_venues.json
-
-      # Upload logs
-      - name: Upload cleaner log
-        uses: actions/upload-artifact@v4
-        with:
-          name: cleaner_log.txt
-          path: main/logs/cleaner_log.txt
-
-      - name: Upload scraper log
-        uses: actions/upload-artifact@v4
-        with:
-          name: scraper_log.txt
-          path: main/logs/scraper_log.txt
-
-      # Upload timestamped versions
-      - name: Upload timestamped cleaned CSV
-        uses: actions/upload-artifact@v4
-        with:
-          name: cleaned_venues_${{ github.run_id }}.csv
-          path: main/data/processed/cleaned_venues_*.csv
-
-      - name: Upload timestamped scraped JSON
-        uses: actions/upload-artifact@v4
-        with:
-          name: hitched_venues_${{ github.run_id }}.json
-          path: main/data/raw/hitched_venues_*.json
-
-      - name: Show logs in terminal
-        run: |
-          echo "Scraper Log:"
-          cat main/logs/scraper_log.txt || echo "No scraper log found"
-          echo ""
-          echo "Cleaner Log:"
-          cat main/logs/cleaner_log.txt || echo "No cleaner log found"
+          name: wedding-data-results-${{ github.run_id }}
+          path: |
+            main/data/raw/
+            main/data/processed/
+            main/logs/
