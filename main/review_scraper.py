@@ -46,6 +46,19 @@ for venue in all_venues:
         
         time.sleep(2)  # Optional wait to fully load
 
+        # 🛠 Auto-click all 'Read more' buttons if present
+        try:
+            read_more_buttons = driver.find_elements(By.CSS_SELECTOR, "button.app-read-more-link")
+            for btn in read_more_buttons:
+                try:
+                    driver.execute_script("arguments[0].click();", btn)
+                    time.sleep(0.2)  # small pause to let it expand
+                except Exception as click_e:
+                    print(f"Couldn't click a 'Read more' button: {click_e}")
+        except Exception as e:
+            print(f"Couldn't find 'Read more' buttons: {e}")
+
+        # 🎯 Now scrape all fully expanded reviews
         review_blocks = driver.find_elements(By.CSS_SELECTOR, "div.storefrontReviewsTileContent")
 
         for block in review_blocks:
@@ -65,7 +78,7 @@ for venue in all_venues:
                 print(f"⚠️ Skipped a review block: {e}")
 
     except Exception as e:
-        print(f"❌ Failed to scrape reviews for {venue_name}: {e}")
+        print(f"Failed to scrape reviews for {venue_name}: {e}")
 
 # Save reviews
 reviews_df = pd.DataFrame(all_reviews)

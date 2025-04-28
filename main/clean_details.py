@@ -20,7 +20,7 @@ with open(input_path, "r", encoding="utf-8") as f:
 
 # Setup headers
 venue_headers = [
-    "name", "region", "location", "rating", "no_of_reviews",
+    "venue_no", "venue_name", "region", "location", "rating", "no_of_reviews",
     "price_text", "price_type", "price_numeric",
     "min_capacity", "max_capacity",
     "url", "description",
@@ -29,12 +29,12 @@ venue_headers = [
 ]
 
 supplier_headers = [
-    "venue_name", "supplier_name", "supplier_url",
+    "venue_no", "venue_name", "supplier_name", "supplier_url",
     "supplier_image", "supplier_rating", "supplier_category"
 ]
 
 deal_headers = [
-    "venue_name", "deal_type", "deal_title", "expires_on"
+    "venue_no", "venue_name", "deal_type", "deal_title", "expires_on"
 ]
 
 try:
@@ -54,7 +54,8 @@ try:
         for venue in data:
             # Save venue main info
             venue_writer.writerow({
-                "name": venue.get("name"),
+                "venue_no": venue.get("venue_no"),
+                "venue_name": venue.get("name"),
                 "region": venue.get("region"),
                 "location": venue.get("location"),
                 "rating": venue.get("rating"),
@@ -76,6 +77,7 @@ try:
             # Save suppliers
             for supplier in venue.get("preferred_suppliers", []):
                 supplier_writer.writerow({
+                    "venue_no": venue.get("venue_no"),
                     "venue_name": venue.get("name"),
                     "supplier_name": supplier.get("vendor_name"),
                     "supplier_url": supplier.get("vendor_url"),
@@ -87,6 +89,7 @@ try:
             # Save deals
             for deal in venue.get("deals", []):
                 deal_writer.writerow({
+                    "venue_no": venue.get("venue_no"),
                     "venue_name": venue.get("name"),
                     "deal_type": deal.get("type"),
                     "deal_title": deal.get("title"),
