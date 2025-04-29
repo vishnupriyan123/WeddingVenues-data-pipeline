@@ -1,0 +1,90 @@
+name: Automated Wedding Data Pipeline
+
+on:
+  schedule:
+    - cron: "30 4 * * *"  # Daily at 4:30 AM UTC
+  workflow_dispatch:
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ensure folders exist
+        run: |
+          mkdir -p main/data/raw
+          mkdir -p main/data/processed
+          mkdir -p main/logs
+
+      - name: Run scraper
+        run: python main/scraper.py
+
+      - name: Run cleaner
+        run: python main/cleaner.py
+
+      - name: Commit cleaned CSV to GitHub
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add main/data/processed/cleaned_venues.csv
+          git commit -m "Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
+
+      # Upload latest files into Artifacts
+      - name: Upload cleaned CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: cleaned_venues.csv
+          path: main/data/processed/cleaned_venues.csv
+
+      - name: Upload raw JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: hitched_venues.json
+          path: main/data/raw/hitched_venues.json
+
+      - name: Upload cleaner log
+        uses: actions/upload-artifact@v4
+        with:
+          name: cleaner_log.txt
+          path: main/logs/cleaner_log.txt
+
+      - name: Upload scraper log
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper_log.txt
+          path: main/logs/scraper_log.txt
+
+      - name: Upload timestamped cleaned CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: cleaned_venues_${{ github.run_id }}.csv
+          path: main/data/processed/cleaned_venues_*.csv
+
+      - name: Upload timestamped scraped JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: hitched_venues_${{ github.run_id }}.json
+          path: main/data/raw/hitched_venues_*.json
+
+      - name: Check log contents before upload
+        run: |
+          echo "scraper_log.txt:"
+          cat main/logs/scraper_log.txt || echo "not found"
+          echo "cleaner_log.txt:"
+          cat main/logs/cleaner_log.txt || echo "not found"
