@@ -1,4 +1,4 @@
-name: Automated Wedding Data Pipeline
+name: sprint1-Automated Wedding Data Pipeline
 
 on:
   schedule:

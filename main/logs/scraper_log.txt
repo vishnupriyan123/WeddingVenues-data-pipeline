@@ -1,0 +1,653 @@
+Scraped 240 venues on Sat Apr 19 18:11:06 2025
+Scraped 240 venues on Sat Apr 19 18:46:33 2025
+Scraped 240 venues on Sat Apr 19 18:47:41 2025
+Scraped 240 venues on Sat Apr 19 22:29:11 2025
+Scraped 240 venues on Sat Apr 19 22:42:42 2025
+Scraped 240 venues on Sun Apr 20 16:01:33 2025
+Scraped 240 venues on Sun Apr 20 19:24:20 2025
+Scraped 240 venues on Sun Apr 20 19:46:13 2025
+Scraped 240 venues on Sun Apr 20 19:53:22 2025
+Scraped 240 venues on Sun Apr 20 20:52:50 2025
+Scraped 2160 venues across all regions on Mon Apr 21 03:48:53 2025
+Scraped 2160 venues across all regions on Mon Apr 21 04:13:01 2025
+Scraped 671 venues across all regions on Mon Apr 21 05:19:55 2025
+Scraped 2160 venues across all regions on Mon Apr 21 05:53:17 2025
+Scraped 2160 venues across all regions on Mon Apr 21 06:32:21 2025
+Scraped 2160 venues across all regions on Mon Apr 21 06:47:36 2025
+Scraped 2160 venues across 19 regions on Mon Apr 21 07:06:50 2025
+2025-04-22 02:28:24,774 - INFO - ====== WebDriver manager ======
+2025-04-22 02:28:24,950 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 02:28:25,061 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 02:28:25,125 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 02:28:25,384 - INFO - WebDriver version 135.0.7049.95 selected
+2025-04-22 02:28:25,387 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.95/mac-arm64/chromedriver-mac-arm64.zip
+2025-04-22 02:28:25,388 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.95/mac-arm64/chromedriver-mac-arm64.zip
+2025-04-22 02:28:25,481 - INFO - Driver downloading response is 200
+2025-04-22 02:28:25,990 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 02:28:26,174 - INFO - Driver has been saved in cache [/Users/vishnupriyantv/.wdm/drivers/chromedriver/mac64/135.0.7049.95]
+2025-04-22 02:28:27,566 - INFO - Scraping region: London
+2025-04-22 02:28:29,071 - INFO - ➡ Page 1 of London
+2025-04-22 02:28:30,961 - INFO - ➡ Page 2 of London
+2025-04-22 02:28:32,676 - INFO - ➡ Page 3 of London
+2025-04-22 02:28:34,395 - INFO - ➡ Page 4 of London
+2025-04-22 02:28:36,163 - INFO - ➡ Page 5 of London
+2025-04-22 02:28:38,010 - INFO - ➡ Page 6 of London
+2025-04-22 02:28:39,862 - INFO - ➡ Page 7 of London
+2025-04-22 02:28:41,657 - INFO - ➡ Page 8 of London
+2025-04-22 02:28:43,398 - INFO - ➡ Page 9 of London
+2025-04-22 02:28:45,117 - INFO - ➡ Page 10 of London
+2025-04-22 02:28:46,881 - INFO - Scraping region: Kent
+2025-04-22 02:28:47,708 - INFO - ➡ Page 1 of Kent
+2025-04-22 02:28:49,311 - INFO - ➡ Page 2 of Kent
+2025-04-22 02:28:51,027 - INFO - ➡ Page 3 of Kent
+2025-04-22 02:28:52,791 - INFO - ➡ Page 4 of Kent
+2025-04-22 02:28:54,602 - INFO - ➡ Page 5 of Kent
+2025-04-22 02:28:56,370 - INFO - Scraping region: Essex
+2025-04-22 02:28:57,123 - INFO - ➡ Page 1 of Essex
+2025-04-22 02:28:58,828 - INFO - ➡ Page 2 of Essex
+2025-04-22 02:29:00,720 - INFO - ➡ Page 3 of Essex
+2025-04-22 02:29:02,688 - INFO - ➡ Page 4 of Essex
+2025-04-22 02:29:04,704 - INFO - Scraping region: Scotland
+2025-04-22 02:29:05,560 - INFO - ➡ Page 1 of Scotland
+2025-04-22 02:29:07,271 - INFO - ➡ Page 2 of Scotland
+2025-04-22 02:29:09,020 - INFO - ➡ Page 3 of Scotland
+2025-04-22 02:29:10,764 - INFO - ➡ Page 4 of Scotland
+2025-04-22 02:29:12,565 - INFO - ➡ Page 5 of Scotland
+2025-04-22 02:29:14,325 - INFO - ➡ Page 6 of Scotland
+2025-04-22 02:29:16,061 - INFO - Scraping region: West Midlands
+2025-04-22 02:29:16,868 - INFO - ➡ Page 1 of West Midlands
+2025-04-22 02:29:18,568 - INFO - ➡ Page 2 of West Midlands
+2025-04-22 02:29:20,324 - INFO - ➡ Page 3 of West Midlands
+2025-04-22 02:29:22,165 - INFO - ➡ Page 4 of West Midlands
+2025-04-22 02:29:23,931 - INFO - Scraping region: Cheshire
+2025-04-22 02:29:25,084 - INFO - ➡ Page 1 of Cheshire
+2025-04-22 02:29:26,792 - INFO - ➡ Page 2 of Cheshire
+2025-04-22 02:29:28,654 - INFO - ➡ Page 3 of Cheshire
+2025-04-22 02:29:30,426 - INFO - ➡ Page 4 of Cheshire
+2025-04-22 02:29:32,306 - INFO - Scraping region: Northern Ireland
+2025-04-22 02:29:33,254 - INFO - ➡ Page 1 of Northern Ireland
+2025-04-22 02:29:34,810 - INFO - ➡ Page 2 of Northern Ireland
+2025-04-22 02:29:36,688 - INFO - ➡ Page 3 of Northern Ireland
+2025-04-22 02:29:38,328 - INFO - Scraping region: Surrey
+2025-04-22 02:29:39,152 - INFO - ➡ Page 1 of Surrey
+2025-04-22 02:29:40,977 - INFO - ➡ Page 2 of Surrey
+2025-04-22 02:29:42,990 - INFO - ➡ Page 3 of Surrey
+2025-04-22 02:29:44,944 - INFO - ➡ Page 4 of Surrey
+2025-04-22 02:29:47,055 - INFO - Scraping region: North East - England
+2025-04-22 02:29:47,979 - INFO - ➡ Page 1 of North East - England
+2025-04-22 02:29:49,800 - INFO - ➡ Page 2 of North East - England
+2025-04-22 02:29:51,654 - INFO - ➡ Page 3 of North East - England
+2025-04-22 02:29:53,383 - INFO - ➡ Page 4 of North East - England
+2025-04-22 02:29:55,172 - INFO - Scraping region: Hampshire
+2025-04-22 02:29:56,087 - INFO - ➡ Page 1 of Hampshire
+2025-04-22 02:29:58,011 - INFO - ➡ Page 2 of Hampshire
+2025-04-22 02:29:59,844 - INFO - ➡ Page 3 of Hampshire
+2025-04-22 02:30:01,777 - INFO - ➡ Page 4 of Hampshire
+2025-04-22 02:30:03,916 - INFO - Scraping region: North West - England
+2025-04-22 02:30:05,087 - INFO - ➡ Page 1 of North West - England
+2025-04-22 02:30:06,764 - INFO - ➡ Page 2 of North West - England
+2025-04-22 02:30:08,627 - INFO - ➡ Page 3 of North West - England
+2025-04-22 02:30:10,434 - INFO - ➡ Page 4 of North West - England
+2025-04-22 02:30:12,190 - INFO - ➡ Page 5 of North West - England
+2025-04-22 02:30:13,935 - INFO - ➡ Page 6 of North West - England
+2025-04-22 02:30:15,692 - INFO - ➡ Page 7 of North West - England
+2025-04-22 02:30:17,563 - INFO - ➡ Page 8 of North West - England
+2025-04-22 02:30:19,335 - INFO - ➡ Page 9 of North West - England
+2025-04-22 02:30:21,114 - INFO - ➡ Page 10 of North West - England
+2025-04-22 02:30:22,921 - INFO - Scraping region: Hertfordshire
+2025-04-22 02:30:23,730 - INFO - ➡ Page 1 of Hertfordshire
+2025-04-22 02:30:25,398 - INFO - ➡ Page 2 of Hertfordshire
+2025-04-22 02:30:27,206 - INFO - ➡ Page 3 of Hertfordshire
+2025-04-22 02:30:29,002 - INFO - ➡ Page 4 of Hertfordshire
+2025-04-22 02:30:30,771 - INFO - Scraping region: West Sussex
+2025-04-22 02:30:31,626 - INFO - ➡ Page 1 of West Sussex
+2025-04-22 02:30:33,304 - INFO - ➡ Page 2 of West Sussex
+2025-04-22 02:30:35,102 - INFO - ➡ Page 3 of West Sussex
+2025-04-22 02:30:36,907 - INFO - ➡ Page 4 of West Sussex
+2025-04-22 02:30:38,687 - INFO - Scraping region: North Yorkshire
+2025-04-22 02:30:39,924 - INFO - ➡ Page 1 of North Yorkshire
+2025-04-22 02:30:41,778 - INFO - ➡ Page 2 of North Yorkshire
+2025-04-22 02:30:43,551 - INFO - ➡ Page 3 of North Yorkshire
+2025-04-22 02:30:45,331 - INFO - ➡ Page 4 of North Yorkshire
+2025-04-22 02:30:47,119 - INFO - ➡ Page 5 of North Yorkshire
+2025-04-22 02:30:48,921 - INFO - Scraping region: Devon
+2025-04-22 02:30:49,650 - INFO - ➡ Page 1 of Devon
+2025-04-22 02:30:51,271 - INFO - ➡ Page 2 of Devon
+2025-04-22 02:30:53,007 - INFO - ➡ Page 3 of Devon
+2025-04-22 02:30:54,742 - INFO - ➡ Page 4 of Devon
+2025-04-22 02:30:56,482 - INFO - Scraping region: Oxfordshire
+2025-04-22 02:30:57,308 - INFO - ➡ Page 1 of Oxfordshire
+2025-04-22 02:30:58,915 - INFO - ➡ Page 2 of Oxfordshire
+2025-04-22 02:31:00,624 - INFO - ➡ Page 3 of Oxfordshire
+2025-04-22 02:31:02,506 - INFO - ➡ Page 4 of Oxfordshire
+2025-04-22 02:31:04,285 - INFO - Scraping region: Cornwall
+2025-04-22 02:31:05,206 - INFO - ➡ Page 1 of Cornwall
+2025-04-22 02:31:06,970 - INFO - ➡ Page 2 of Cornwall
+2025-04-22 02:31:08,824 - INFO - ➡ Page 3 of Cornwall
+2025-04-22 02:31:10,594 - INFO - ➡ Page 4 of Cornwall
+2025-04-22 02:31:12,352 - INFO - Scraping region: West Yorkshire
+2025-04-22 02:31:13,283 - INFO - ➡ Page 1 of West Yorkshire
+2025-04-22 02:31:14,916 - INFO - ➡ Page 2 of West Yorkshire
+2025-04-22 02:31:16,701 - INFO - ➡ Page 3 of West Yorkshire
+2025-04-22 02:31:18,497 - INFO - ➡ Page 4 of West Yorkshire
+2025-04-22 02:31:20,282 - INFO - Scraping region: Nottinghamshire
+2025-04-22 02:31:21,055 - INFO - ➡ Page 1 of Nottinghamshire
+2025-04-22 02:31:22,694 - INFO - ➡ Page 2 of Nottinghamshire
+2025-04-22 02:31:24,472 - INFO - ➡ Page 3 of Nottinghamshire
+2025-04-22 02:31:26,265 - INFO - Saved timestamped file: all_venues_20250422.json
+2025-04-22 02:31:26,278 - INFO - Saved latest file: all_venues.json
+2025-04-22 02:31:26,278 - INFO - Scraped 2160 venues across 19 regions.
+2025-04-22 02:54:04,810 - INFO - ====== WebDriver manager ======
+2025-04-22 02:54:04,993 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 02:54:05,067 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 02:54:05,126 - INFO - Driver [/Users/vishnupriyantv/.wdm/drivers/chromedriver/mac64/135.0.7049.95/chromedriver-mac-arm64/chromedriver] found in cache
+2025-04-22 02:54:06,569 - INFO - Scraping region: London
+2025-04-22 02:54:08,208 - INFO - ➡ Page 1 of London
+2025-04-22 02:54:09,865 - INFO - ➡ Page 2 of London
+2025-04-22 02:54:11,616 - INFO - ➡ Page 3 of London
+2025-04-22 02:54:13,385 - INFO - ➡ Page 4 of London
+2025-04-22 02:54:15,155 - INFO - ➡ Page 5 of London
+2025-04-22 02:54:16,946 - INFO - ➡ Page 6 of London
+2025-04-22 02:54:18,692 - INFO - ➡ Page 7 of London
+2025-04-22 02:54:20,440 - INFO - ➡ Page 8 of London
+2025-04-22 02:54:22,571 - INFO - ➡ Page 9 of London
+2025-04-22 02:54:24,325 - INFO - ➡ Page 10 of London
+2025-04-22 02:54:26,178 - INFO - Scraping region: Kent
+2025-04-22 02:54:27,115 - INFO - ➡ Page 1 of Kent
+2025-04-22 02:54:28,752 - INFO - ➡ Page 2 of Kent
+2025-04-22 02:54:30,510 - INFO - ➡ Page 3 of Kent
+2025-04-22 02:54:32,304 - INFO - ➡ Page 4 of Kent
+2025-04-22 02:54:34,085 - INFO - ➡ Page 5 of Kent
+2025-04-22 02:54:36,020 - INFO - Scraping region: Essex
+2025-04-22 02:54:36,804 - INFO - ➡ Page 1 of Essex
+2025-04-22 02:54:38,566 - INFO - ➡ Page 2 of Essex
+2025-04-22 02:54:40,478 - INFO - ➡ Page 3 of Essex
+2025-04-22 02:54:42,313 - INFO - ➡ Page 4 of Essex
+2025-04-22 02:54:44,558 - INFO - Scraping region: Scotland
+2025-04-22 02:54:47,312 - INFO - ➡ Page 1 of Scotland
+2025-04-22 02:54:50,086 - INFO - ➡ Page 2 of Scotland
+2025-04-22 02:54:51,867 - INFO - ➡ Page 3 of Scotland
+2025-04-22 02:54:53,571 - INFO - ➡ Page 4 of Scotland
+2025-04-22 02:54:55,290 - INFO - ➡ Page 5 of Scotland
+2025-04-22 02:54:56,983 - INFO - ➡ Page 6 of Scotland
+2025-04-22 02:54:58,773 - INFO - Scraping region: West Midlands
+2025-04-22 02:54:59,627 - INFO - ➡ Page 1 of West Midlands
+2025-04-22 02:55:01,276 - INFO - ➡ Page 2 of West Midlands
+2025-04-22 02:55:03,276 - INFO - ➡ Page 3 of West Midlands
+2025-04-22 02:55:05,041 - INFO - ➡ Page 4 of West Midlands
+2025-04-22 02:55:06,992 - INFO - Scraping region: Cheshire
+2025-04-22 02:55:07,841 - INFO - ➡ Page 1 of Cheshire
+2025-04-22 02:55:09,520 - INFO - ➡ Page 2 of Cheshire
+2025-04-22 02:55:11,344 - INFO - ➡ Page 3 of Cheshire
+2025-04-22 02:55:13,170 - INFO - ➡ Page 4 of Cheshire
+2025-04-22 02:55:14,945 - INFO - Scraping region: Northern Ireland
+2025-04-22 02:55:15,685 - INFO - ➡ Page 1 of Northern Ireland
+2025-04-22 02:55:17,125 - INFO - ➡ Page 2 of Northern Ireland
+2025-04-22 02:55:18,869 - INFO - ➡ Page 3 of Northern Ireland
+2025-04-22 02:55:20,505 - INFO - Scraping region: Surrey
+2025-04-22 02:55:21,558 - INFO - ➡ Page 1 of Surrey
+2025-04-22 02:55:23,235 - INFO - ➡ Page 2 of Surrey
+2025-04-22 02:55:25,028 - INFO - ➡ Page 3 of Surrey
+2025-04-22 02:55:26,833 - INFO - ➡ Page 4 of Surrey
+2025-04-22 02:55:28,749 - INFO - Scraping region: North East - England
+2025-04-22 02:55:29,529 - INFO - ➡ Page 1 of North East - England
+2025-04-22 02:55:31,271 - INFO - ➡ Page 2 of North East - England
+2025-04-22 02:55:33,026 - INFO - ➡ Page 3 of North East - England
+2025-04-22 02:55:34,760 - INFO - ➡ Page 4 of North East - England
+2025-04-22 02:55:36,530 - INFO - Scraping region: Hampshire
+2025-04-22 02:55:37,364 - INFO - ➡ Page 1 of Hampshire
+2025-04-22 02:55:39,146 - INFO - ➡ Page 2 of Hampshire
+2025-04-22 02:55:40,980 - INFO - ➡ Page 3 of Hampshire
+2025-04-22 02:55:42,945 - INFO - ➡ Page 4 of Hampshire
+2025-04-22 02:55:44,798 - INFO - Scraping region: North West - England
+2025-04-22 02:55:45,925 - INFO - ➡ Page 1 of North West - England
+2025-04-22 02:55:47,602 - INFO - ➡ Page 2 of North West - England
+2025-04-22 02:55:49,573 - INFO - ➡ Page 3 of North West - England
+2025-04-22 02:55:51,409 - INFO - ➡ Page 4 of North West - England
+2025-04-22 02:55:53,217 - INFO - ➡ Page 5 of North West - England
+2025-04-22 02:55:55,048 - INFO - ➡ Page 6 of North West - England
+2025-04-22 02:55:56,858 - INFO - ➡ Page 7 of North West - England
+2025-04-22 02:55:58,702 - INFO - ➡ Page 8 of North West - England
+2025-04-22 02:56:00,535 - INFO - ➡ Page 9 of North West - England
+2025-04-22 02:56:02,461 - INFO - ➡ Page 10 of North West - England
+2025-04-22 02:56:04,400 - INFO - Scraping region: Hertfordshire
+2025-04-22 02:56:05,219 - INFO - ➡ Page 1 of Hertfordshire
+2025-04-22 02:56:07,061 - INFO - ➡ Page 2 of Hertfordshire
+2025-04-22 02:56:09,007 - INFO - ➡ Page 3 of Hertfordshire
+2025-04-22 02:56:10,888 - INFO - ➡ Page 4 of Hertfordshire
+2025-04-22 02:56:12,854 - INFO - Scraping region: West Sussex
+2025-04-22 02:56:13,700 - INFO - ➡ Page 1 of West Sussex
+2025-04-22 02:56:15,474 - INFO - ➡ Page 2 of West Sussex
+2025-04-22 02:56:17,576 - INFO - ➡ Page 3 of West Sussex
+2025-04-22 02:56:20,181 - INFO - ➡ Page 4 of West Sussex
+2025-04-22 02:56:22,051 - INFO - Scraping region: North Yorkshire
+2025-04-22 02:56:22,890 - INFO - ➡ Page 1 of North Yorkshire
+2025-04-22 02:56:24,705 - INFO - ➡ Page 2 of North Yorkshire
+2025-04-22 02:56:26,488 - INFO - ➡ Page 3 of North Yorkshire
+2025-04-22 02:56:28,523 - INFO - ➡ Page 4 of North Yorkshire
+2025-04-22 02:56:30,479 - INFO - ➡ Page 5 of North Yorkshire
+2025-04-22 02:56:32,389 - INFO - Scraping region: Devon
+2025-04-22 02:56:33,407 - INFO - ➡ Page 1 of Devon
+2025-04-22 02:56:35,107 - INFO - ➡ Page 2 of Devon
+2025-04-22 02:56:37,119 - INFO - ➡ Page 3 of Devon
+2025-04-22 02:56:38,937 - INFO - ➡ Page 4 of Devon
+2025-04-22 02:56:41,022 - INFO - Scraping region: Oxfordshire
+2025-04-22 02:56:41,944 - INFO - ➡ Page 1 of Oxfordshire
+2025-04-22 02:56:44,501 - INFO - ➡ Page 2 of Oxfordshire
+2025-04-22 02:56:46,542 - INFO - ➡ Page 3 of Oxfordshire
+2025-04-22 02:56:48,358 - INFO - ➡ Page 4 of Oxfordshire
+2025-04-22 02:56:50,133 - INFO - Scraping region: Cornwall
+2025-04-22 02:56:51,019 - INFO - ➡ Page 1 of Cornwall
+2025-04-22 02:56:52,699 - INFO - ➡ Page 2 of Cornwall
+2025-04-22 02:56:54,576 - INFO - ➡ Page 3 of Cornwall
+2025-04-22 02:56:56,435 - INFO - ➡ Page 4 of Cornwall
+2025-04-22 02:56:58,283 - INFO - Scraping region: West Yorkshire
+2025-04-22 02:56:59,270 - INFO - ➡ Page 1 of West Yorkshire
+2025-04-22 02:57:01,109 - INFO - ➡ Page 2 of West Yorkshire
+2025-04-22 02:57:03,125 - INFO - ➡ Page 3 of West Yorkshire
+2025-04-22 02:57:05,036 - INFO - ➡ Page 4 of West Yorkshire
+2025-04-22 02:57:07,003 - INFO - Scraping region: Nottinghamshire
+2025-04-22 02:57:07,761 - INFO - ➡ Page 1 of Nottinghamshire
+2025-04-22 02:57:09,568 - INFO - ➡ Page 2 of Nottinghamshire
+2025-04-22 02:57:12,826 - INFO - ➡ Page 3 of Nottinghamshire
+2025-04-22 02:57:15,897 - INFO - Saved timestamped file: data/raw/all_venues_20250422.json
+2025-04-22 02:57:15,928 - INFO - Saved latest file: data/raw/all_venues.json
+2025-04-22 02:57:15,929 - INFO - Finished: Scraped 2160 venues across 19 regions.
+2025-04-22 15:00:03,116 - INFO - ====== WebDriver manager ======
+2025-04-22 15:00:03,306 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 15:00:03,382 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-22 15:00:03,439 - INFO - Driver [/Users/vishnupriyantv/.wdm/drivers/chromedriver/mac64/135.0.7049.95/chromedriver-mac-arm64/chromedriver] found in cache
+2025-04-22 15:00:04,726 - INFO - Scraping region: London
+2025-04-22 15:00:06,435 - INFO - ➡ Page 1 of London
+2025-04-22 15:00:08,469 - INFO - ➡ Page 2 of London
+2025-04-22 15:00:10,615 - INFO - ➡ Page 3 of London
+2025-04-22 15:00:12,406 - INFO - ➡ Page 4 of London
+2025-04-22 15:00:14,159 - INFO - ➡ Page 5 of London
+2025-04-22 15:00:15,906 - INFO - ➡ Page 6 of London
+2025-04-22 15:00:17,650 - INFO - ➡ Page 7 of London
+2025-04-22 15:00:19,412 - INFO - ➡ Page 8 of London
+2025-04-22 15:00:21,131 - INFO - ➡ Page 9 of London
+2025-04-22 15:00:22,834 - INFO - ➡ Page 10 of London
+2025-04-22 15:00:24,554 - INFO - Scraping region: Kent
+2025-04-22 15:00:25,541 - INFO - ➡ Page 1 of Kent
+2025-04-22 15:00:27,162 - INFO - ➡ Page 2 of Kent
+2025-04-22 15:00:28,936 - INFO - ➡ Page 3 of Kent
+2025-04-22 15:00:30,653 - INFO - ➡ Page 4 of Kent
+2025-04-22 15:00:32,416 - INFO - ➡ Page 5 of Kent
+2025-04-22 15:00:34,141 - INFO - Scraping region: Essex
+2025-04-22 15:00:35,056 - INFO - ➡ Page 1 of Essex
+2025-04-22 15:00:36,657 - INFO - ➡ Page 2 of Essex
+2025-04-22 15:00:38,390 - INFO - ➡ Page 3 of Essex
+2025-04-22 15:00:40,161 - INFO - ➡ Page 4 of Essex
+2025-04-22 15:00:41,925 - INFO - Scraping region: Scotland
+2025-04-22 15:00:42,882 - INFO - ➡ Page 1 of Scotland
+2025-04-22 15:00:44,470 - INFO - ➡ Page 2 of Scotland
+2025-04-22 15:00:46,147 - INFO - ➡ Page 3 of Scotland
+2025-04-22 15:00:47,855 - INFO - ➡ Page 4 of Scotland
+2025-04-22 15:00:49,550 - INFO - ➡ Page 5 of Scotland
+2025-04-22 15:00:51,248 - INFO - ➡ Page 6 of Scotland
+2025-04-22 15:00:52,949 - INFO - Scraping region: West Midlands
+2025-04-22 15:00:53,794 - INFO - ➡ Page 1 of West Midlands
+2025-04-22 15:00:55,401 - INFO - ➡ Page 2 of West Midlands
+2025-04-22 15:00:57,154 - INFO - ➡ Page 3 of West Midlands
+2025-04-22 15:00:58,895 - INFO - ➡ Page 4 of West Midlands
+2025-04-22 15:01:00,638 - INFO - Scraping region: Cheshire
+2025-04-22 15:01:01,479 - INFO - ➡ Page 1 of Cheshire
+2025-04-22 15:01:03,377 - INFO - ➡ Page 2 of Cheshire
+2025-04-22 15:01:05,252 - INFO - ➡ Page 3 of Cheshire
+2025-04-22 15:01:07,064 - INFO - ➡ Page 4 of Cheshire
+2025-04-22 15:01:08,858 - INFO - Scraping region: Northern Ireland
+2025-04-22 15:01:09,577 - INFO - ➡ Page 1 of Northern Ireland
+2025-04-22 15:01:11,021 - INFO - ➡ Page 2 of Northern Ireland
+2025-04-22 15:01:12,573 - INFO - ➡ Page 3 of Northern Ireland
+2025-04-22 15:01:14,086 - INFO - Scraping region: Surrey
+2025-04-22 15:01:14,909 - INFO - ➡ Page 1 of Surrey
+2025-04-22 15:01:16,582 - INFO - ➡ Page 2 of Surrey
+2025-04-22 15:01:18,383 - INFO - ➡ Page 3 of Surrey
+2025-04-22 15:01:20,161 - INFO - ➡ Page 4 of Surrey
+2025-04-22 15:01:21,931 - INFO - Scraping region: North East - England
+2025-04-22 15:01:22,769 - INFO - ➡ Page 1 of North East - England
+2025-04-22 15:01:24,393 - INFO - ➡ Page 2 of North East - England
+2025-04-22 15:01:26,115 - INFO - ➡ Page 3 of North East - England
+2025-04-22 15:01:27,855 - INFO - ➡ Page 4 of North East - England
+2025-04-22 15:01:29,602 - INFO - Scraping region: Hampshire
+2025-04-22 15:01:30,565 - INFO - ➡ Page 1 of Hampshire
+2025-04-22 15:01:32,244 - INFO - ➡ Page 2 of Hampshire
+2025-04-22 15:01:34,307 - INFO - ➡ Page 3 of Hampshire
+2025-04-22 15:01:36,124 - INFO - ➡ Page 4 of Hampshire
+2025-04-22 15:01:37,933 - INFO - Scraping region: North West - England
+2025-04-22 15:01:39,101 - INFO - ➡ Page 1 of North West - England
+2025-04-22 15:01:40,725 - INFO - ➡ Page 2 of North West - England
+2025-04-22 15:01:42,519 - INFO - ➡ Page 3 of North West - England
+2025-04-22 15:01:44,361 - INFO - ➡ Page 4 of North West - England
+2025-04-22 15:01:46,116 - INFO - ➡ Page 5 of North West - England
+2025-04-22 15:01:47,896 - INFO - ➡ Page 6 of North West - England
+2025-04-22 15:01:49,648 - INFO - ➡ Page 7 of North West - England
+2025-04-22 15:01:51,366 - INFO - ➡ Page 8 of North West - England
+2025-04-22 15:01:53,098 - INFO - ➡ Page 9 of North West - England
+2025-04-22 15:01:55,010 - INFO - ➡ Page 10 of North West - England
+2025-04-22 15:01:56,793 - INFO - Scraping region: Hertfordshire
+2025-04-22 15:01:57,700 - INFO - ➡ Page 1 of Hertfordshire
+2025-04-22 15:01:59,389 - INFO - ➡ Page 2 of Hertfordshire
+2025-04-22 15:02:01,396 - INFO - ➡ Page 3 of Hertfordshire
+2025-04-22 15:02:04,762 - INFO - ➡ Page 4 of Hertfordshire
+2025-04-22 15:02:06,559 - INFO - Scraping region: West Sussex
+2025-04-22 15:02:07,351 - INFO - ➡ Page 1 of West Sussex
+2025-04-22 15:02:09,079 - INFO - ➡ Page 2 of West Sussex
+2025-04-22 15:02:10,966 - INFO - ➡ Page 3 of West Sussex
+2025-04-22 15:02:12,742 - INFO - ➡ Page 4 of West Sussex
+2025-04-22 15:02:14,579 - INFO - Scraping region: North Yorkshire
+2025-04-22 15:02:15,532 - INFO - ➡ Page 1 of North Yorkshire
+2025-04-22 15:02:17,211 - INFO - ➡ Page 2 of North Yorkshire
+2025-04-22 15:02:19,011 - INFO - ➡ Page 3 of North Yorkshire
+2025-04-22 15:02:20,755 - INFO - ➡ Page 4 of North Yorkshire
+2025-04-22 15:02:22,514 - INFO - ➡ Page 5 of North Yorkshire
+2025-04-22 15:02:24,300 - INFO - Scraping region: Devon
+2025-04-22 15:02:25,081 - INFO - ➡ Page 1 of Devon
+2025-04-22 15:02:26,706 - INFO - ➡ Page 2 of Devon
+2025-04-22 15:02:28,614 - INFO - ➡ Page 3 of Devon
+2025-04-22 15:02:30,446 - INFO - ➡ Page 4 of Devon
+2025-04-22 15:02:32,205 - INFO - Scraping region: Oxfordshire
+2025-04-22 15:02:32,980 - INFO - ➡ Page 1 of Oxfordshire
+2025-04-22 15:02:34,622 - INFO - ➡ Page 2 of Oxfordshire
+2025-04-22 15:02:36,360 - INFO - ➡ Page 3 of Oxfordshire
+2025-04-22 15:02:38,159 - INFO - ➡ Page 4 of Oxfordshire
+2025-04-22 15:02:39,909 - INFO - Scraping region: Cornwall
+2025-04-22 15:02:40,707 - INFO - ➡ Page 1 of Cornwall
+2025-04-22 15:02:42,381 - INFO - ➡ Page 2 of Cornwall
+2025-04-22 15:02:44,134 - INFO - ➡ Page 3 of Cornwall
+2025-04-22 15:02:45,922 - INFO - ➡ Page 4 of Cornwall
+2025-04-22 15:02:47,695 - INFO - Scraping region: West Yorkshire
+2025-04-22 15:02:48,612 - INFO - ➡ Page 1 of West Yorkshire
+2025-04-22 15:02:50,323 - INFO - ➡ Page 2 of West Yorkshire
+2025-04-22 15:02:52,115 - INFO - ➡ Page 3 of West Yorkshire
+2025-04-22 15:02:53,903 - INFO - ➡ Page 4 of West Yorkshire
+2025-04-22 15:02:55,655 - INFO - Scraping region: Nottinghamshire
+2025-04-22 15:02:56,574 - INFO - ➡ Page 1 of Nottinghamshire
+2025-04-22 15:02:58,269 - INFO - ➡ Page 2 of Nottinghamshire
+2025-04-22 15:03:00,065 - INFO - ➡ Page 3 of Nottinghamshire
+2025-04-22 15:03:01,831 - INFO - Saved timestamped file: data/raw/all_venues_20250422.json
+2025-04-22 15:03:01,843 - INFO - Saved latest file: data/raw/all_venues.json
+2025-04-22 15:03:01,843 - INFO - Finished: Scraped 2160 venues across 19 regions.
+2025-04-25 00:56:56,108 - INFO - ====== WebDriver manager ======
+2025-04-25 00:56:56,714 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-25 00:56:56,813 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-25 00:56:56,872 - INFO - Driver [/Users/vishnupriyantv/.wdm/drivers/chromedriver/mac64/135.0.7049.114/chromedriver-mac-arm64/chromedriver] found in cache
+2025-04-25 00:56:59,649 - INFO - Scraping region: London
+2025-04-25 00:57:01,614 - INFO - ➡ Page 1 of London
+2025-04-25 00:57:03,754 - INFO - ➡ Page 2 of London
+2025-04-25 00:57:05,559 - INFO - ➡ Page 3 of London
+2025-04-25 00:57:07,361 - INFO - ➡ Page 4 of London
+2025-04-25 00:57:09,608 - INFO - ➡ Page 5 of London
+2025-04-25 00:57:11,447 - INFO - ➡ Page 6 of London
+2025-04-25 00:57:13,342 - INFO - ➡ Page 7 of London
+2025-04-25 00:57:15,123 - INFO - ➡ Page 8 of London
+2025-04-25 00:57:16,918 - INFO - ➡ Page 9 of London
+2025-04-25 00:57:18,734 - INFO - ➡ Page 10 of London
+2025-04-25 00:57:20,620 - INFO - Scraping region: Kent
+2025-04-25 00:57:21,632 - INFO - ➡ Page 1 of Kent
+2025-04-25 00:57:23,342 - INFO - ➡ Page 2 of Kent
+2025-04-25 00:57:25,383 - INFO - ➡ Page 3 of Kent
+2025-04-25 00:57:27,240 - INFO - ➡ Page 4 of Kent
+2025-04-25 00:57:30,011 - INFO - ➡ Page 5 of Kent
+2025-04-25 00:57:31,952 - INFO - Scraping region: Essex
+2025-04-25 00:57:33,059 - INFO - ➡ Page 1 of Essex
+2025-04-25 00:57:34,836 - INFO - ➡ Page 2 of Essex
+2025-04-25 00:57:36,821 - INFO - ➡ Page 3 of Essex
+2025-04-25 00:57:38,656 - INFO - ➡ Page 4 of Essex
+2025-04-25 00:57:40,607 - INFO - Scraping region: Scotland
+2025-04-25 00:57:41,928 - INFO - ➡ Page 1 of Scotland
+2025-04-25 00:57:43,673 - INFO - ➡ Page 2 of Scotland
+2025-04-25 00:57:45,614 - INFO - ➡ Page 3 of Scotland
+2025-04-25 00:57:47,459 - INFO - ➡ Page 4 of Scotland
+2025-04-25 00:57:49,267 - INFO - ➡ Page 5 of Scotland
+2025-04-25 00:57:51,185 - INFO - ➡ Page 6 of Scotland
+2025-04-25 00:57:53,110 - INFO - Scraping region: West Midlands
+2025-04-25 00:57:54,050 - INFO - ➡ Page 1 of West Midlands
+2025-04-25 00:57:56,403 - INFO - ➡ Page 2 of West Midlands
+2025-04-25 00:57:58,365 - INFO - ➡ Page 3 of West Midlands
+2025-04-25 00:58:00,307 - INFO - ➡ Page 4 of West Midlands
+2025-04-25 00:58:02,344 - INFO - Scraping region: Cheshire
+2025-04-25 00:58:03,821 - INFO - ➡ Page 1 of Cheshire
+2025-04-25 00:58:05,626 - INFO - ➡ Page 2 of Cheshire
+2025-04-25 00:58:07,546 - INFO - ➡ Page 3 of Cheshire
+2025-04-25 00:58:09,516 - INFO - ➡ Page 4 of Cheshire
+2025-04-25 00:58:11,635 - INFO - Scraping region: Northern Ireland
+2025-04-25 00:58:12,521 - INFO - ➡ Page 1 of Northern Ireland
+2025-04-25 00:58:14,052 - INFO - ➡ Page 2 of Northern Ireland
+2025-04-25 00:58:16,208 - INFO - ➡ Page 3 of Northern Ireland
+2025-04-25 00:58:18,109 - INFO - Scraping region: Surrey
+2025-04-25 00:58:19,106 - INFO - ➡ Page 1 of Surrey
+2025-04-25 00:58:21,055 - INFO - ➡ Page 2 of Surrey
+2025-04-25 00:58:23,714 - INFO - ➡ Page 3 of Surrey
+2025-04-25 00:58:26,312 - INFO - ➡ Page 4 of Surrey
+2025-04-25 00:58:28,383 - INFO - Scraping region: North East - England
+2025-04-25 00:58:29,527 - INFO - ➡ Page 1 of North East - England
+2025-04-25 00:58:31,412 - INFO - ➡ Page 2 of North East - England
+2025-04-25 00:58:33,526 - INFO - ➡ Page 3 of North East - England
+2025-04-25 00:58:35,564 - INFO - ➡ Page 4 of North East - England
+2025-04-25 00:58:37,428 - INFO - Scraping region: Hampshire
+2025-04-25 00:58:39,243 - INFO - ➡ Page 1 of Hampshire
+2025-04-25 00:58:41,472 - INFO - ➡ Page 2 of Hampshire
+2025-04-25 00:58:43,696 - INFO - ➡ Page 3 of Hampshire
+2025-04-25 00:58:46,062 - INFO - ➡ Page 4 of Hampshire
+2025-04-25 00:58:48,210 - INFO - Scraping region: North West - England
+2025-04-25 00:58:49,612 - INFO - ➡ Page 1 of North West - England
+2025-04-25 00:58:51,521 - INFO - ➡ Page 2 of North West - England
+2025-04-25 00:58:53,560 - INFO - ➡ Page 3 of North West - England
+2025-04-25 00:58:55,612 - INFO - ➡ Page 4 of North West - England
+2025-04-25 00:58:57,556 - INFO - ➡ Page 5 of North West - England
+2025-04-25 00:58:59,869 - INFO - ➡ Page 6 of North West - England
+2025-04-25 00:59:01,973 - INFO - ➡ Page 7 of North West - England
+2025-04-25 00:59:03,945 - INFO - ➡ Page 8 of North West - England
+2025-04-25 00:59:05,919 - INFO - ➡ Page 9 of North West - England
+2025-04-25 00:59:08,040 - INFO - ➡ Page 10 of North West - England
+2025-04-25 00:59:09,965 - INFO - Scraping region: Hertfordshire
+2025-04-25 00:59:10,856 - INFO - ➡ Page 1 of Hertfordshire
+2025-04-25 00:59:12,677 - INFO - ➡ Page 2 of Hertfordshire
+2025-04-25 00:59:14,568 - INFO - ➡ Page 3 of Hertfordshire
+2025-04-25 00:59:16,504 - INFO - ➡ Page 4 of Hertfordshire
+2025-04-25 00:59:18,414 - INFO - Scraping region: West Sussex
+2025-04-25 00:59:19,379 - INFO - ➡ Page 1 of West Sussex
+2025-04-25 00:59:21,253 - INFO - ➡ Page 2 of West Sussex
+2025-04-25 00:59:23,388 - INFO - ➡ Page 3 of West Sussex
+2025-04-25 00:59:25,445 - INFO - ➡ Page 4 of West Sussex
+2025-04-25 00:59:27,373 - INFO - Scraping region: North Yorkshire
+2025-04-25 00:59:28,757 - INFO - ➡ Page 1 of North Yorkshire
+2025-04-25 00:59:30,859 - INFO - ➡ Page 2 of North Yorkshire
+2025-04-25 00:59:33,166 - INFO - ➡ Page 3 of North Yorkshire
+2025-04-25 00:59:35,207 - INFO - ➡ Page 4 of North Yorkshire
+2025-04-25 00:59:37,083 - INFO - ➡ Page 5 of North Yorkshire
+2025-04-25 00:59:38,978 - INFO - Scraping region: Devon
+2025-04-25 00:59:39,927 - INFO - ➡ Page 1 of Devon
+2025-04-25 00:59:41,728 - INFO - ➡ Page 2 of Devon
+2025-04-25 00:59:43,813 - INFO - ➡ Page 3 of Devon
+2025-04-25 00:59:45,690 - INFO - ➡ Page 4 of Devon
+2025-04-25 00:59:47,648 - INFO - Scraping region: Oxfordshire
+2025-04-25 00:59:49,878 - INFO - ➡ Page 1 of Oxfordshire
+2025-04-25 00:59:52,522 - INFO - ➡ Page 2 of Oxfordshire
+2025-04-25 00:59:54,897 - INFO - ➡ Page 3 of Oxfordshire
+2025-04-25 00:59:57,031 - INFO - ➡ Page 4 of Oxfordshire
+2025-04-25 00:59:59,634 - INFO - Scraping region: Cornwall
+2025-04-25 01:00:01,102 - INFO - ➡ Page 1 of Cornwall
+2025-04-25 01:00:06,078 - INFO - ➡ Page 2 of Cornwall
+2025-04-25 01:00:10,480 - INFO - ➡ Page 3 of Cornwall
+2025-04-25 01:00:15,082 - INFO - ➡ Page 4 of Cornwall
+2025-04-25 01:00:17,611 - INFO - Scraping region: West Yorkshire
+2025-04-25 01:00:18,936 - INFO - ➡ Page 1 of West Yorkshire
+2025-04-25 01:00:22,315 - INFO - ➡ Page 2 of West Yorkshire
+2025-04-25 01:00:24,716 - INFO - ➡ Page 3 of West Yorkshire
+2025-04-25 01:00:27,420 - INFO - ➡ Page 4 of West Yorkshire
+2025-04-25 01:00:30,212 - INFO - Scraping region: Nottinghamshire
+2025-04-25 01:00:31,385 - INFO - ➡ Page 1 of Nottinghamshire
+2025-04-25 01:00:33,947 - INFO - ➡ Page 2 of Nottinghamshire
+2025-04-25 01:00:35,956 - INFO - ➡ Page 3 of Nottinghamshire
+2025-04-25 01:00:38,657 - INFO - Saved timestamped file: data/raw/all_venues_20250425.json
+2025-04-25 01:00:38,768 - INFO - Saved latest file: data/raw/all_venues.json
+2025-04-25 01:00:38,774 - INFO - Finished: Scraped 2160 venues across 19 regions.
+2025-04-25 03:04:48,499 - INFO - ====== WebDriver manager ======
+2025-04-25 03:04:48,914 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-25 03:04:48,994 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-25 03:04:49,051 - INFO - Driver [/Users/vishnupriyantv/.wdm/drivers/chromedriver/mac64/135.0.7049.114/chromedriver-mac-arm64/chromedriver] found in cache
+2025-04-25 03:04:50,571 - INFO - Scraping region: London
+2025-04-25 03:04:52,260 - INFO - ➡ Page 1 of London
+2025-04-25 03:04:53,935 - INFO - ➡ Page 2 of London
+2025-04-25 03:04:55,725 - INFO - ➡ Page 3 of London
+2025-04-25 03:04:57,537 - INFO - ➡ Page 4 of London
+2025-04-25 03:04:59,341 - INFO - ➡ Page 5 of London
+2025-04-25 03:05:01,072 - INFO - ➡ Page 6 of London
+2025-04-25 03:05:02,836 - INFO - ➡ Page 7 of London
+2025-04-25 03:05:04,590 - INFO - ➡ Page 8 of London
+2025-04-25 03:05:06,328 - INFO - ➡ Page 9 of London
+2025-04-25 03:05:08,114 - INFO - ➡ Page 10 of London
+2025-04-25 03:05:09,852 - INFO - Scraping region: Kent
+2025-04-25 03:05:10,795 - INFO - ➡ Page 1 of Kent
+2025-04-25 03:05:12,473 - INFO - ➡ Page 2 of Kent
+2025-04-25 03:05:14,224 - INFO - ➡ Page 3 of Kent
+2025-04-25 03:05:15,987 - INFO - ➡ Page 4 of Kent
+2025-04-25 03:05:17,737 - INFO - ➡ Page 5 of Kent
+2025-04-25 03:05:19,488 - INFO - Scraping region: Essex
+2025-04-25 03:05:20,522 - INFO - ➡ Page 1 of Essex
+2025-04-25 03:05:22,145 - INFO - ➡ Page 2 of Essex
+2025-04-25 03:05:24,324 - INFO - ➡ Page 3 of Essex
+2025-04-25 03:05:26,184 - INFO - ➡ Page 4 of Essex
+2025-04-25 03:05:28,127 - INFO - Scraping region: Scotland
+2025-04-25 03:05:31,064 - INFO - ➡ Page 1 of Scotland
+2025-04-25 03:05:32,674 - INFO - ➡ Page 2 of Scotland
+2025-04-25 03:05:34,376 - INFO - ➡ Page 3 of Scotland
+2025-04-25 03:05:36,124 - INFO - ➡ Page 4 of Scotland
+2025-04-25 03:05:37,984 - INFO - ➡ Page 5 of Scotland
+2025-04-25 03:05:39,795 - INFO - ➡ Page 6 of Scotland
+2025-04-25 03:05:41,707 - INFO - Scraping region: West Midlands
+2025-04-25 03:05:42,690 - INFO - ➡ Page 1 of West Midlands
+2025-04-25 03:05:44,391 - INFO - ➡ Page 2 of West Midlands
+2025-04-25 03:05:46,270 - INFO - ➡ Page 3 of West Midlands
+2025-04-25 03:05:48,092 - INFO - ➡ Page 4 of West Midlands
+2025-04-25 03:05:49,919 - INFO - Scraping region: Cheshire
+2025-04-25 03:05:51,058 - INFO - ➡ Page 1 of Cheshire
+2025-04-25 03:05:52,783 - INFO - ➡ Page 2 of Cheshire
+2025-04-25 03:05:54,640 - INFO - ➡ Page 3 of Cheshire
+2025-04-25 03:05:56,526 - INFO - ➡ Page 4 of Cheshire
+2025-04-25 03:05:58,395 - INFO - Scraping region: Northern Ireland
+2025-04-25 03:05:59,224 - INFO - ➡ Page 1 of Northern Ireland
+2025-04-25 03:06:00,693 - INFO - ➡ Page 2 of Northern Ireland
+2025-04-25 03:06:02,424 - INFO - ➡ Page 3 of Northern Ireland
+2025-04-25 03:06:04,196 - INFO - Scraping region: Surrey
+2025-04-25 03:06:05,144 - INFO - ➡ Page 1 of Surrey
+2025-04-25 03:06:07,047 - INFO - ➡ Page 2 of Surrey
+2025-04-25 03:06:08,879 - INFO - ➡ Page 3 of Surrey
+2025-04-25 03:06:10,723 - INFO - ➡ Page 4 of Surrey
+2025-04-25 03:06:12,616 - INFO - Scraping region: North East - England
+2025-04-25 03:06:13,360 - INFO - ➡ Page 1 of North East - England
+2025-04-25 03:06:15,030 - INFO - ➡ Page 2 of North East - England
+2025-04-25 03:06:16,845 - INFO - ➡ Page 3 of North East - England
+2025-04-25 03:06:19,161 - INFO - ➡ Page 4 of North East - England
+2025-04-25 03:06:21,513 - INFO - Scraping region: Hampshire
+2025-04-25 03:06:22,520 - INFO - ➡ Page 1 of Hampshire
+2025-04-25 03:06:24,242 - INFO - ➡ Page 2 of Hampshire
+2025-04-25 03:06:26,082 - INFO - ➡ Page 3 of Hampshire
+2025-04-25 03:06:27,957 - INFO - ➡ Page 4 of Hampshire
+2025-04-25 03:06:30,321 - INFO - Scraping region: North West - England
+2025-04-25 03:06:31,691 - INFO - ➡ Page 1 of North West - England
+2025-04-25 03:06:33,533 - INFO - ➡ Page 2 of North West - England
+2025-04-25 03:06:36,048 - INFO - ➡ Page 3 of North West - England
+2025-04-25 03:06:37,966 - INFO - ➡ Page 4 of North West - England
+2025-04-25 03:06:39,787 - INFO - ➡ Page 5 of North West - England
+2025-04-25 03:06:41,646 - INFO - ➡ Page 6 of North West - England
+2025-04-25 03:06:43,927 - INFO - ➡ Page 7 of North West - England
+2025-04-25 03:06:45,908 - INFO - ➡ Page 8 of North West - England
+2025-04-25 03:06:48,177 - INFO - ➡ Page 9 of North West - England
+2025-04-25 03:06:49,969 - INFO - ➡ Page 10 of North West - England
+2025-04-25 03:06:51,824 - INFO - Scraping region: Hertfordshire
+2025-04-25 03:06:52,756 - INFO - ➡ Page 1 of Hertfordshire
+2025-04-25 03:06:54,641 - INFO - ➡ Page 2 of Hertfordshire
+2025-04-25 03:06:56,973 - INFO - ➡ Page 3 of Hertfordshire
+2025-04-25 03:06:58,878 - INFO - ➡ Page 4 of Hertfordshire
+2025-04-25 03:07:00,753 - INFO - Scraping region: West Sussex
+2025-04-25 03:07:01,739 - INFO - ➡ Page 1 of West Sussex
+2025-04-25 03:07:03,965 - INFO - ➡ Page 2 of West Sussex
+2025-04-25 03:07:06,314 - INFO - ➡ Page 3 of West Sussex
+2025-04-25 03:07:08,400 - INFO - ➡ Page 4 of West Sussex
+2025-04-25 03:07:10,366 - INFO - Scraping region: North Yorkshire
+2025-04-25 03:07:12,167 - INFO - ➡ Page 1 of North Yorkshire
+2025-04-25 03:07:14,219 - INFO - ➡ Page 2 of North Yorkshire
+2025-04-25 03:07:16,022 - INFO - ➡ Page 3 of North Yorkshire
+2025-04-25 03:07:19,331 - INFO - ➡ Page 4 of North Yorkshire
+2025-04-25 03:07:21,429 - INFO - ➡ Page 5 of North Yorkshire
+2025-04-25 03:07:23,399 - INFO - Scraping region: Devon
+2025-04-25 03:07:24,682 - INFO - ➡ Page 1 of Devon
+2025-04-25 03:07:26,700 - INFO - ➡ Page 2 of Devon
+2025-04-25 03:07:28,744 - INFO - ➡ Page 3 of Devon
+2025-04-25 03:07:30,781 - INFO - ➡ Page 4 of Devon
+2025-04-25 03:07:32,621 - INFO - Scraping region: Oxfordshire
+2025-04-25 03:07:33,593 - INFO - ➡ Page 1 of Oxfordshire
+2025-04-25 03:07:35,262 - INFO - ➡ Page 2 of Oxfordshire
+2025-04-25 03:07:37,062 - INFO - ➡ Page 3 of Oxfordshire
+2025-04-25 03:07:38,922 - INFO - ➡ Page 4 of Oxfordshire
+2025-04-25 03:07:40,739 - INFO - Scraping region: Cornwall
+2025-04-25 03:07:41,923 - INFO - ➡ Page 1 of Cornwall
+2025-04-25 03:07:43,595 - INFO - ➡ Page 2 of Cornwall
+2025-04-25 03:07:45,360 - INFO - ➡ Page 3 of Cornwall
+2025-04-25 03:07:47,211 - INFO - ➡ Page 4 of Cornwall
+2025-04-25 03:07:49,040 - INFO - Scraping region: West Yorkshire
+2025-04-25 03:07:49,904 - INFO - ➡ Page 1 of West Yorkshire
+2025-04-25 03:07:51,645 - INFO - ➡ Page 2 of West Yorkshire
+2025-04-25 03:07:53,416 - INFO - ➡ Page 3 of West Yorkshire
+2025-04-25 03:07:55,359 - INFO - ➡ Page 4 of West Yorkshire
+2025-04-25 03:07:57,202 - INFO - Scraping region: Nottinghamshire
+2025-04-25 03:07:58,442 - INFO - ➡ Page 1 of Nottinghamshire
+2025-04-25 03:08:00,124 - INFO - ➡ Page 2 of Nottinghamshire
+2025-04-25 03:08:02,038 - INFO - ➡ Page 3 of Nottinghamshire
+2025-04-25 03:08:03,866 - INFO - Saved timestamped file: data/raw/all_venues_20250425.json
+2025-04-25 03:08:03,880 - INFO - Saved latest file: data/raw/all_venues.json
+2025-04-25 03:08:03,880 - INFO - Finished: Scraped 2160 venues across 19 regions.
+2025-04-28 15:16:04,934 - INFO - ====== WebDriver manager ======
+2025-04-28 15:16:05,137 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-28 15:16:05,460 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-28 15:16:05,721 - INFO - Driver [/Users/vishnupriyantv/.wdm/drivers/chromedriver/mac64/135.0.7049.114/chromedriver-mac-arm64/chromedriver] found in cache
+2025-04-28 15:16:07,074 - INFO - Scraping region: London
+2025-04-28 15:16:50,538 - INFO - Scraping region: Kent
+2025-04-28 15:17:21,664 - INFO - Scraping region: Essex
+2025-04-28 15:17:46,656 - INFO - Scraping region: Scotland
+2025-04-28 15:18:07,550 - INFO - Scraping region: West Midlands
+2025-04-28 15:18:20,974 - INFO - Scraping region: Cheshire
+2025-04-28 15:18:38,079 - INFO - Scraping region: Northern Ireland
+2025-04-28 15:18:55,781 - INFO - Scraping region: Surrey
+2025-04-28 15:19:17,792 - INFO - Scraping region: North East - England
+2025-04-28 15:19:32,638 - INFO - Scraping region: Hampshire
+2025-04-28 15:19:53,895 - INFO - Scraping region: North West - England
+2025-04-28 15:20:22,202 - INFO - Scraping region: Hertfordshire
+2025-04-28 15:20:47,670 - INFO - Scraping region: West Sussex
+2025-04-28 15:21:00,237 - INFO - Scraping region: North Yorkshire
+2025-04-28 15:21:29,855 - INFO - Scraping region: Devon
+2025-04-28 15:22:13,522 - INFO - Scraping region: Oxfordshire
+2025-04-28 15:23:01,180 - INFO - Scraping region: Cornwall
+2025-04-28 15:23:43,866 - INFO - Scraping region: West Yorkshire
+2025-04-28 15:24:42,596 - INFO - Scraping region: Nottinghamshire
+2025-04-28 15:25:26,165 - INFO - Finished: Scraped 2160 venues across 19 regions.
+2025-04-28 17:06:17,578 - INFO - ====== WebDriver manager ======
+2025-04-28 17:06:17,778 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-28 17:06:18,031 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-28 17:06:18,340 - INFO - Driver [/Users/vishnupriyantv/.wdm/drivers/chromedriver/mac64/135.0.7049.114/chromedriver-mac-arm64/chromedriver] found in cache
+2025-04-28 17:06:19,707 - INFO - Scraping region: London
+2025-04-28 17:07:26,672 - INFO - Scraping region: Kent
+2025-04-28 17:08:50,726 - INFO - Scraping region: Essex
+2025-04-28 17:10:27,954 - INFO - Scraping region: Scotland
+2025-04-28 17:11:38,522 - INFO - Scraping region: West Midlands
+2025-04-28 17:11:58,175 - INFO - Scraping region: Cheshire
+2025-04-28 17:12:16,381 - INFO - Scraping region: Northern Ireland
+2025-04-28 17:12:31,904 - INFO - Scraping region: Surrey
+2025-04-28 17:12:58,376 - INFO - Scraping region: North East - England
+2025-04-28 17:13:56,516 - INFO - Scraping region: Hampshire
+2025-04-28 17:14:32,540 - INFO - Scraping region: North West - England
+2025-04-28 17:17:34,479 - INFO - Scraping region: Hertfordshire
+2025-04-28 17:18:44,134 - INFO - Scraping region: West Sussex
+2025-04-28 17:19:22,726 - INFO - Scraping region: North Yorkshire
+2025-04-28 17:20:01,077 - INFO - Scraping region: Devon
+2025-04-28 17:20:29,686 - INFO - Scraping region: Oxfordshire
+2025-04-28 17:21:32,096 - INFO - Scraping region: Cornwall
+2025-04-28 17:22:11,626 - INFO - Scraping region: West Yorkshire
+2025-04-28 17:22:59,125 - INFO - Scraping region: Nottinghamshire
+[2025-04-28 17:23:19] ✅ Saved timestamped venues file: data/raw/backups/all_venues_20250428.json
+[2025-04-28 17:23:19] ✅ Updated latest venues file: data/raw/all_venues.json
+2025-04-28 17:23:19,762 - INFO - Finished: Scraped 2160 venues across 19 regions.

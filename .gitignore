@@ -29,15 +29,15 @@ dist/
 main/data/raw/*
 
 # Ignore all processed files...
-main/data/processed/*
+#main/data/processed/*
 # ...except the main cleaned CSV (tracked by git)
-!main/data/processed/cleaned_venues.csv
+#!main/data/processed/cleaned_venues.csv
 
 # -----------------------------
 # Logs
 # -----------------------------
-main/logs/
-*.log
+#ain/logs/
+#*.log
 
 # -----------------------------
 # Output Visuals

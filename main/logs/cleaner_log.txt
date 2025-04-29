@@ -1,0 +1,61 @@
+Cleaned 240 rows on Sat Apr 19 18:48:42 2025
+Cleaned 240 rows on Sat Apr 19 18:49:19 2025
+Cleaned 240 rows on Sat Apr 19 18:50:29 2025
+Cleaned 240 rows on Sat Apr 19 18:54:31 2025
+Cleaned 240 rows on Sat Apr 19 22:30:14 2025
+Cleaned 240 rows on Sat Apr 19 22:42:07 2025
+Cleaned 240 rows on Sun Apr 20 16:01:40 2025
+Cleaned 240 rows on Sun Apr 20 19:43:52 2025
+Cleaned 240 rows on Sun Apr 20 19:45:45 2025
+Cleaned 240 rows on Sun Apr 20 19:53:45 2025
+Cleaned 240 rows on Sun Apr 20 20:53:44 2025
+Cleaned 240 rows on Mon Apr 21 04:47:02 2025
+Cleaned 2160 rows on Mon Apr 21 04:50:49 2025
+Cleaned 2160 rows on Mon Apr 21 06:54:43 2025
+Cleaned 2160 rows on Mon Apr 21 07:07:20 2025
+Cleaned 2160 rows on Mon Apr 21 07:13:27 2025
+2025-04-22 02:17:15,324 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-22 02:17:15,353 - INFO - Snapshot saved to data/processed/cleaned_venues_20250422.csv
+2025-04-22 02:17:15,353 - INFO - Cleaned 2160 rows successfully
+2025-04-22 02:21:42,237 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-22 02:21:42,244 - INFO - Snapshot saved to data/processed/cleaned_venues_20250422.csv
+2025-04-22 02:21:42,244 - INFO - Cleaned 2160 rows successfully
+2025-04-22 02:50:31,113 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-22 02:50:31,120 - INFO - Snapshot saved to data/processed/cleaned_venues_20250422.csv
+2025-04-22 02:50:31,120 - INFO - Cleaned 2160 rows successfully
+2025-04-22 15:04:18,546 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-22 15:04:18,554 - INFO - Snapshot saved to data/processed/cleaned_venues_20250422.csv
+2025-04-22 15:04:18,554 - INFO - Cleaned 2160 rows successfully
+2025-04-22 15:19:22,420 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-22 15:19:22,426 - INFO - Snapshot saved to data/processed/cleaned_venues_20250422.csv
+2025-04-22 15:19:22,426 - INFO - Cleaned 2160 rows successfully
+2025-04-25 02:59:43,842 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-25 02:59:43,850 - INFO - Snapshot saved to data/processed/cleaned_venues_20250425.csv
+2025-04-25 02:59:43,850 - INFO - Cleaned 2160 rows successfully
+[2025-04-25 19:35:57] ✅ Successfully cleaned and saved CSV with 2160 venues.
+[2025-04-25 19:52:26] ✅ Successfully saved venues (2160), suppliers, and deals.
+[2025-04-25 20:02:51] ✅ Successfully saved venues (12), suppliers, and deals.
+2025-04-25 20:09:08,294 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-25 20:09:08,295 - INFO - Snapshot saved to data/processed/cleaned_venues_20250425.csv
+2025-04-25 20:09:08,295 - INFO - Cleaned 17 rows successfully
+2025-04-25 20:13:11,102 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-25 20:13:11,109 - INFO - Snapshot saved to data/processed/cleaned_venues_20250425.csv
+2025-04-25 20:13:11,109 - INFO - Cleaned 2160 rows successfully
+2025-04-25 20:18:12,950 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-25 20:18:12,958 - INFO - Snapshot saved to data/processed/cleaned_venues_20250425.csv
+2025-04-25 20:18:12,958 - INFO - Cleaned 2160 rows successfully
+2025-04-25 20:19:27,426 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-25 20:19:27,434 - INFO - Snapshot saved to data/processed/cleaned_venues_20250425.csv
+2025-04-25 20:19:27,434 - INFO - Cleaned 2160 rows successfully
+[2025-04-28 00:05:15] ✅ Successfully saved venues (2160), suppliers, and deals.
+[2025-04-28 00:17:22] ✅ Successfully saved venues (2160), suppliers, and deals.
+2025-04-28 15:27:07,600 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-28 15:27:07,607 - INFO - Snapshot saved to data/processed/cleaned_venues_20250428.csv
+2025-04-28 15:27:07,607 - INFO - Cleaned 2160 rows successfully
+2025-04-28 17:43:20,904 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-28 17:43:20,911 - INFO - Snapshot saved to data/processed/cleaned_venues_20250428.csv
+2025-04-28 17:43:20,911 - INFO - Cleaned 2160 rows successfully
+2025-04-28 17:49:28,394 - INFO - Cleaned data saved to data/processed/cleaned_venues.csv
+2025-04-28 17:49:28,403 - INFO - Snapshot saved to data/processed/cleaned_venues_20250428.csv
+2025-04-28 17:49:28,403 - INFO - Cleaned 2160 rows successfully
+[2025-04-28 17:51:23] ✅ Successfully saved venues (2160), suppliers, and deals.
