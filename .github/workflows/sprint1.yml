@@ -1,8 +1,8 @@
 name: sprint1-Automated Wedding Data Pipeline
 
 on:
-  schedule:
-    - cron: "30 4 * * *"  # Daily at 4:30 AM UTC
+  #schedule:
+  #  - cron: "30 4 * * *"  # Daily at 4:30 AM UTC
   workflow_dispatch:
 
 jobs:

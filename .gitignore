@@ -65,3 +65,8 @@ main/plots/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# ----------------------------------------
+# workflow
+# ----------------------------------------
+.github/workflows/sprint1.yml
