@@ -27,7 +27,10 @@ jobs:
 
       - name: Ensure folders exist
         run: |
-          mkdir -p main/data/raw main/data/processed main/logs main/data/backup
+          mkdir -p main/data/raw
+          mkdir -p main/data/processed
+          mkdir -p main/data/raw/backups
+          mkdir -p main/logs
 
       - name: Run Region Scraper
         run: python main/regions_scraper.py
@@ -47,54 +50,39 @@ jobs:
       - name: Run Venue Reviews Scraper
         run: python main/venues_reviews_scraper.py
 
-      - name: Commit cleaned data to GitHub
+      - name: Commit updated data files to GitHub
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          
-          # Add the specific files you want to commit
-          git add main/data/processed/venue_reviews.csv \
-                  main/data/processed/cleaned_venues_suppliers.csv \
-                  main/data/processed/cleaned_venues_details.csv \
-                  main/data/processed/cleaned_venues.csv \
-                  main/data/processed/cleaned_venues_deals.csv
-          
-          # Commit the changes
+          git add main/data/processed/*.csv main/data/raw/*.json || echo "Nothing to add"
           git commit -m "Auto-update: cleaned data on $(date +'%Y-%m-%d')" || echo "No changes to commit"
-          
-          # Ensure the latest changes are pulled before pushing
           git pull --rebase
-          
-          # Push the changes
           git push
 
-      - name: Upload Artifacts
+      - name: Upload data artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: wedding-data-results-${{ github.run_id }}
+          name: wedding-data-${{ github.run_id }}
           path: |
             main/data/raw/
             main/data/processed/
             main/logs/
 
-      # Upload timestamped files
-      - name: Upload timestamped cleaned CSV
+      - name: Upload timestamped cleaned CSVs
         uses: actions/upload-artifact@v4
         with:
-          name: cleaned_venues_${{ github.run_id }}.csv
+          name: cleaned-venues-${{ github.run_id }}
           path: main/data/processed/cleaned_venues_*.csv
 
-      - name: Upload timestamped scraped JSON
+      - name: Upload timestamped scraped JSONs
         uses: actions/upload-artifact@v4
         with:
-          name: hitched_venues_${{ github.run_id }}.json
-          path: main/data/raw/hitched_venues_*.json
+          name: hitched-venues-${{ github.run_id }}
+          path: main/data/raw/*_*.json
 
       - name: Check log contents before upload
         run: |
           echo "scraper_log.txt:"
-          cat logs/scraper_log.txt || echo "not found"
-          cat main/logs/scraper_log.txt || echo "not found"
+          cat main/logs/scraper_log.txt || echo "scraper_log.txt not found"
           echo "cleaner_log.txt:"
-          cat logs/cleaner_log.txt || echo "not found"
-          cat main/logs/cleaner_log.txt || echo "not found"
+          cat main/logs/cleaner_log.txt || echo "cleaner_log.txt not found"

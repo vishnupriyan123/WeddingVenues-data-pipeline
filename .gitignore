@@ -26,7 +26,7 @@ dist/
 # -----------------------------
 
 # Ignore all raw scraped data (JSON), keep none
-main/data/raw/*
+# main/data/raw/*
 
 # Ignore all processed files...
 #main/data/processed/*
