@@ -253,48 +253,32 @@ def extract_suppliers(driver, selectors):
 def click_all_read_more_buttons(driver, button_selector="button.app-read-more-link"):
     """
     Clicks all 'Read more' buttons to expand hidden content.
-    Uses JavaScript to click all buttons at once.
     """
     try:
-        # Find all read more buttons
         read_more_buttons = driver.find_elements(By.CSS_SELECTOR, button_selector)
-        if not read_more_buttons:
-            return
-            
-        # Click all buttons at once using JavaScript
-        script = """
-        arguments[0].forEach(button => {
-            button.click();
-        });
-        """
-        driver.execute_script(script, read_more_buttons)
-        
-        # Brief pause to let content expand
-        time.sleep(0.1)  # Reduced from 0.2s per button to 0.1s total
-        
+        for btn in read_more_buttons:
+            try:
+                driver.execute_script("arguments[0].click();", btn)
+                time.sleep(0.2)  # Small pause to let content expand
+            except Exception as click_e:
+                print(f"⚠️ Couldn't click a 'Read more' button: {click_e}")
     except Exception as e:
-        print(f"⚠️ Couldn't find/click 'Read more' buttons: {e}")
+        print(f"⚠️ Couldn't find 'Read more' buttons: {e}")
 
 def extract_reviews(driver, review_block_selector="div.storefrontReviewsTileContent", review_text_selector="div.storefrontReviewsTileContent__description.app-reviews-tile-read-more"):
     """
     Extracts all reviews after expanding the read more buttons.
-    Uses JavaScript for faster extraction.
     """
     reviews = []
     try:
-        # Extract all review texts at once using JavaScript
-        script = """
-        return Array.from(document.querySelectorAll(arguments[0])).map(block => {
-            try {
-                return block.querySelector(arguments[1]).textContent.trim();
-            } catch (e) {
-                return null;
-            }
-        }).filter(text => text);
-        """
-        reviews = driver.execute_script(script, review_block_selector, review_text_selector)
-        
+        review_blocks = driver.find_elements(By.CSS_SELECTOR, review_block_selector)
+        for block in review_blocks:
+            try:
+                review_text = block.find_element(By.CSS_SELECTOR, review_text_selector).text.strip()
+                reviews.append(review_text)
+            except Exception as e:
+                print(f"⚠️ Skipped a review block: {e}")
     except Exception as e:
-        print(f"⚠️ Failed to extract reviews: {e}")
+        print(f"⚠️ Failed to find review blocks: {e}")
 
     return reviews

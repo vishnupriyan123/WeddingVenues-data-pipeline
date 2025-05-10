@@ -94,7 +94,7 @@ def main():
         st.session_state.model_name = st.selectbox("Select Model", list(model_options.keys()), index=0)
         st.session_state.model_name = model_options[st.session_state.model_name]
 
-    dataset_path = Path(__file__).resolve().parent.parent / "main" / "data" / "processed" / "cleaned_venues_details.csv"
+    dataset_path = Path(__file__).resolve().parent.parent / "main" / "data" / "processed" / "venue_reviews.csv"
     df = pd.read_csv(dataset_path)
 
     st.write("Dataset:")

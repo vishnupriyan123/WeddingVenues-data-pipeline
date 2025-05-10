@@ -53,6 +53,14 @@ main/plots/
 # -----------------------------
 .streamlit/
 
+# Config files with sensitive data
+**/config/keys.py
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+
 # -----------------------------
 # Local Databases
 # -----------------------------
