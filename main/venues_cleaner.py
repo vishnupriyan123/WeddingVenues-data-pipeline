@@ -3,88 +3,71 @@ import pandas as pd
 import re
 import traceback
 from datetime import datetime
-from pathlib import Path
-import logging
+from utils.file_utils import setup_directories, log_message
 
-# Setup paths using pathlib
-raw_dir = Path("data/raw")
-processed_dir = Path("data/processed")
-log_dir = Path("logs")
-
-# Ensure folders exist
-processed_dir.mkdir(parents=True, exist_ok=True)
-log_dir.mkdir(parents=True, exist_ok=True)
-
-# Setup logging
-logging.basicConfig(
-    filename=log_dir / "cleaner_log.txt",
-    filemode="a",
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    level=logging.INFO
-)
+# Setup directories and paths
+dirs = setup_directories()
+raw_file = dirs.raw_dir / "all_venues.json"
+processed_file = dirs.processed_dir / "cleaned_venues.csv"
+timestamp = datetime.now().strftime("%Y%m%d")
+backup_file = dirs.backup_dir / f"cleaned_venues_{timestamp}.csv"
+log_file = dirs.log_dir / "cleaner_log.txt"
 
 try:
-    # Load raw data
-    with open(raw_dir / "all_venues.json", "r", encoding="utf-8") as f:
+    # Load raw JSON
+    with open(raw_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     # Convert to DataFrame
     df = pd.DataFrame(data)
-    #SLno
     df.insert(0, "venue_no", ["V" + str(i) for i in range(1, len(df) + 1)])
-    
+
     # Fix broken URLs
-    df['url'] = df['url'].str.replace(
+    df["url"] = df["url"].str.replace(
         "https://www.hitched.co.ukhttps://www.hitched.co.uk",
         "https://www.hitched.co.uk",
         regex=False
     )
 
-    # Clean location
-    df['location'] = df['location'].str.replace("·", "", regex=False)\
-        .str.replace(r"\s+", " ", regex=True).str.strip()
+    # Clean location text
+    df["location"] = df["location"].str.replace("·", "", regex=False)\
+                                     .str.replace(r"\s+", " ", regex=True).str.strip()
 
-    # Extract min and max capacity
+    # Extract numeric capacity range
     df[["min_capacity", "max_capacity"]] = df["capacity"].str.extract(r"(\d+)\s*(?:to)?\s*(\d+)?")
     df["min_capacity"] = pd.to_numeric(df["min_capacity"], errors="coerce")
     df["max_capacity"] = pd.to_numeric(df["max_capacity"], errors="coerce")
 
-    # Parse price as float
+    # Extract numeric price
     df["price_numeric"] = df["price_text"].str.extract(r"([\d,\.]+)")[0].str.replace(",", "").astype(float)
 
-    # Reorder columns
-    cols = list(df.columns)
-    if "price_type" in cols and "price_numeric" in cols:
+    # Adjust column order
+    if "price_type" in df.columns and "price_numeric" in df.columns:
+        cols = list(df.columns)
         cols.remove("price_type")
         insert_at = cols.index("price_numeric") + 1
         cols.insert(insert_at, "price_type")
         df = df[cols]
 
-    column_order = [
-        "venue_no","name", "region", "location", "rating", "no_of_reviews",
+    # Final column order
+    final_columns = [
+        "venue_no", "name", "region", "location", "rating", "no_of_reviews",
         "price_text", "price_type", "price_numeric",
         "capacity", "min_capacity", "max_capacity", "url"
     ]
-    df = df.reindex(columns=column_order)
+    df = df.reindex(columns=final_columns)
 
-    # Imputation
+    # Impute missing values
     df = df.fillna("N/A")
 
-    # Save latest cleaned file
-    latest_path = processed_dir / "cleaned_venues.csv"
-    df.to_csv(latest_path, index=False)
-    logging.info("Cleaned data saved to %s", latest_path)
+    # Save final cleaned CSV
+    df.to_csv(processed_file, index=False)
+    df.to_csv(backup_file, index=False)
 
-    # Save timestamped snapshot
-    timestamp = datetime.now().strftime("%Y%m%d")
-    snapshot_path = processed_dir / f"cleaned_venues_{timestamp}.csv"
-    df.to_csv(snapshot_path, index=False)
-    logging.info("Snapshot saved to %s", snapshot_path)
+    log_message(log_file, f"✅ Cleaned and saved {len(df)} venues.")
+    print(f"✅ Cleaner ran successfully! Cleaned rows: {len(df)}")
 
-    # Success logs
-    logging.info("Cleaned %d rows successfully", len(df))
-    print("✅ Cleaner ran successfully! Cleaned rows:", len(df))
-
-except Exception:
-    logging.error("Cleaner failed:\n%s", traceback.format_exc())
+except Exception as e:
+    error_msg = f"❌ Cleaner failed: {e}\n{traceback.format_exc()}"
+    log_message(log_file, error_msg)
     print("❌ Cleaning failed. Check logs for details.")
