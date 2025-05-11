@@ -39,6 +39,10 @@ dist/
 #ain/logs/
 #*.log
 
+
+# Ignore backups folder
+main/data/backups/
+
 # -----------------------------
 # Output Visuals
 # -----------------------------
