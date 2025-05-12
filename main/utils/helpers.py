@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
 import time
-from .selectors import SELECTORS
+from .custom_selectors import SELECTORS
 
 
 ### collecting regions
@@ -37,7 +37,7 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from .selectors import SELECTORS
+from .custom_selectors import SELECTORS
 
 def get_max_page(driver):
     """Get the maximum number of pages in a region."""

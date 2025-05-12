@@ -5,7 +5,8 @@ from pathlib import Path
 
 class Directories:
     def __init__(self, base_data_dir="data"):
-        self.data_dir = Path(base_data_dir)
+        #self.data_dir = Path(base_data_dir)
+        self.data_dir = Path(__file__).resolve().parent.parent / base_data_dir
         self.processed_dir = self.data_dir / "processed"
         self.raw_dir = self.data_dir / "raw"
         self.log_dir = Path("logs")

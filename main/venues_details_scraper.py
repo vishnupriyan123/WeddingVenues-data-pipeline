@@ -20,7 +20,7 @@ from utils.helpers import (
     extract_venue_url,
     extract_map
 )
-from utils.selectors import SELECTORS
+from main.utils.custom_selectors import SELECTORS
 
 # Setup directories
 dirs = setup_directories()

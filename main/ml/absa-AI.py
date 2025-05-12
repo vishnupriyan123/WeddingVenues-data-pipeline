@@ -17,7 +17,7 @@ def perform_sentiment_analysis(client, model_name, venue_name, reviews):
     """Use the Together AI API to perform aspect-based sentiment analysis"""
     
     # Prepare reviews for prompt context (limit to prevent token overflow)
-    MAX_REVIEWS = 10
+    MAX_REVIEWS = 50
     reviews_text = "\n\n".join([f"Review {i+1}: {r}" for i, r in enumerate(reviews[:MAX_REVIEWS])])
     review_count = len(reviews)
     
