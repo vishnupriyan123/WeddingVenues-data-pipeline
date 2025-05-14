@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 from together import Together
 from datetime import datetime
@@ -68,8 +69,12 @@ Note: These are {min(MAX_REVIEWS, review_count)} out of {review_count} total rev
 def main():
     st.title("Wedding Venue Sentiment Analysis 💒")
     
-    # Setup directories with correct base path
-    base_dir = Path(__file__).resolve().parent.parent  # Go up to main directory
+    # Add tabs for different views - temporarily using only one tab
+    # tab1, tab2 = st.tabs(["Sentiment Analysis", "Analytics Dashboard"])
+    
+    # with tab1:
+    # Remove tab indentation since we're only using sentiment analysis for now
+    base_dir = Path(__file__).resolve().parent.parent
     dirs = setup_directories(base_data_dir=base_dir / "data")
     dataset_path = dirs.processed_dir / "venue_reviews.csv"
     
@@ -198,6 +203,44 @@ def main():
         st.error(f"Could not find the dataset file: {dataset_path}. Please ensure it's in the same directory as this script.")
     except Exception as e:
         st.error(f"An error occurred while loading the dataset: {str(e)}")
+
+    # Comment out tab2 content
+    
+    # with tab2:
+    #     st.header("Venue Analytics Dashboard")
+        
+    #     # Tableau dashboard embed code
+    #     tableau_html = '''
+    #     <div class='tableauPlaceholder' style='width: 100%; height: 800px;'>
+    #         <object class='tableauViz' width='100%' height='800'>
+    #             <param name='host_url' value='https://public.tableau.com/' />
+    #             <param name='embed_code_version' value='3' />
+    #             <param name='site_root' value='' />
+    #             <param name='name' value='TableauDashboard_17396298706070/Dashboard1' />
+    #             <param name='tabs' value='no' />
+    #             <param name='toolbar' value='yes' />
+    #             <param name='animate_transition' value='yes' />
+    #             <param name='display_static_image' value='no' />
+    #             <param name='display_spinner' value='yes' />
+    #             <param name='display_overlay' value='yes' />
+    #             <param name='display_count' value='yes' />
+    #             <param name='language' value='en-US' />
+    #             <param name='filter' value='publish=yes' />
+    #         </object>
+    #     </div>
+    #     <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+    #     '''
+        
+    #     # Add some context about the dashboard
+    #     st.write("This dashboard provides visual insights into wedding venue data across different regions and price ranges.")
+        
+    #     # Embed Tableau dashboard with proper HTML
+    #     components.html(
+    #         tableau_html,
+    #         height=850,
+    #         width=None  # Allow full width
+    #     )
+    
 
 if __name__ == "__main__":
     main()

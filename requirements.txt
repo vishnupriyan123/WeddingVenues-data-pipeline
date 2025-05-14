@@ -2,7 +2,11 @@
 selenium
 webdriver-manager
 
-# AI Visualization
+#cleaning
+pandas
+pyspark
+
+# AI agents and Streamlit
 streamlit
 pandas
 matplotlib
@@ -12,5 +16,3 @@ together==1.3.10
 e2b==1.0.5
 e2b-code-interpreter==1.0.3
 
-# azure
-sqlalchemy
