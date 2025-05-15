@@ -82,6 +82,3 @@ Thumbs.db
 # workflow
 # ----------------------------------------
 .github/workflows/sprint1.yml
-
-
-upload_to_azure.py

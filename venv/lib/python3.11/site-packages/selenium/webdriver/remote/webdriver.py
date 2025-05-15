@@ -14,7 +14,9 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
+
 """The WebDriver implementation."""
+
 import base64
 import contextlib
 import copy
@@ -41,7 +43,11 @@ from selenium.common.exceptions import JavascriptException
 from selenium.common.exceptions import NoSuchCookieException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import WebDriverException
+from selenium.webdriver.common.bidi.browser import Browser
+from selenium.webdriver.common.bidi.browsing_context import BrowsingContext
+from selenium.webdriver.common.bidi.network import Network
 from selenium.webdriver.common.bidi.script import Script
+from selenium.webdriver.common.bidi.session import Session
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.options import ArgOptions
 from selenium.webdriver.common.options import BaseOptions
@@ -220,7 +226,11 @@ class WebDriver(BaseWebDriver):
             - Custom client configuration to use. Defaults to None.
         """
 
-        if isinstance(options, list):
+        if options is None:
+            raise TypeError(
+                "missing 1 required keyword-only argument: 'options' (instance of driver `options.Options` class)"
+            )
+        elif isinstance(options, list):
             capabilities = create_matches(options)
             _ignore_local_proxy = False
         else:
@@ -252,6 +262,10 @@ class WebDriver(BaseWebDriver):
 
         self._websocket_connection = None
         self._script = None
+        self._network = None
+        self._browser = None
+        self._bidi_session = None
+        self._browsing_context = None
 
     def __repr__(self):
         return f'<{type(self).__module__}.{type(self).__name__} (session="{self.session_id}")>'
@@ -339,9 +353,14 @@ class WebDriver(BaseWebDriver):
         """
 
         caps = _create_caps(capabilities)
-        response = self.execute(Command.NEW_SESSION, caps)["value"]
-        self.session_id = response.get("sessionId")
-        self.caps = response.get("capabilities")
+        try:
+            response = self.execute(Command.NEW_SESSION, caps)["value"]
+            self.session_id = response.get("sessionId")
+            self.caps = response.get("capabilities")
+        except Exception:
+            if hasattr(self, "service") and self.service is not None:
+                self.service.stop()
+            raise
 
     def _wrap_value(self, value):
         if isinstance(value, dict):
@@ -1163,34 +1182,6 @@ class WebDriver(BaseWebDriver):
         else:
             raise WebDriverException("You can only set the orientation to 'LANDSCAPE' and 'PORTRAIT'")
 
-    @property
-    def log_types(self):
-        """Gets a list of the available log types. This only works with w3c
-        compliant browsers.
-
-        Example:
-        --------
-        >>> driver.log_types
-        """
-        return self.execute(Command.GET_AVAILABLE_LOG_TYPES)["value"]
-
-    def get_log(self, log_type):
-        """Gets the log for a given log type.
-
-        Parameters:
-        -----------
-        log_type : str
-            - Type of log that which will be returned
-
-        Example:
-        --------
-        >>> driver.get_log('browser')
-        >>> driver.get_log('driver')
-        >>> driver.get_log('client')
-        >>> driver.get_log('server')
-        """
-        return self.execute(Command.GET_LOG, {"type": log_type})["value"]
-
     def start_devtools(self):
         global devtools
         if self._websocket_connection:
@@ -1256,6 +1247,75 @@ class WebDriver(BaseWebDriver):
             raise WebDriverException("Unable to find url to connect to from capabilities")
 
         self._websocket_connection = WebSocketConnection(ws_url)
+
+    @property
+    def network(self):
+        if not self._websocket_connection:
+            self._start_bidi()
+
+        if not hasattr(self, "_network") or self._network is None:
+            self._network = Network(self._websocket_connection)
+
+        return self._network
+
+    @property
+    def browser(self):
+        """Returns a browser module object for BiDi browser commands.
+
+        Returns:
+        --------
+        Browser: an object containing access to BiDi browser commands.
+
+        Examples:
+        ---------
+        >>> user_context = driver.browser.create_user_context()
+        >>> user_contexts = driver.browser.get_user_contexts()
+        >>> client_windows = driver.browser.get_client_windows()
+        >>> driver.browser.remove_user_context(user_context)
+        """
+        if not self._websocket_connection:
+            self._start_bidi()
+
+        if self._browser is None:
+            self._browser = Browser(self._websocket_connection)
+
+        return self._browser
+
+    @property
+    def _session(self):
+        """
+        Returns the BiDi session object for the current WebDriver session.
+        """
+        if not self._websocket_connection:
+            self._start_bidi()
+
+        if self._bidi_session is None:
+            self._bidi_session = Session(self._websocket_connection)
+
+        return self._bidi_session
+
+    @property
+    def browsing_context(self):
+        """Returns a browsing context module object for BiDi browsing context commands.
+
+        Returns:
+        --------
+        BrowsingContext: an object containing access to BiDi browsing context commands.
+
+        Examples:
+        ---------
+        >>> context_id = driver.browsing_context.create(type="tab")
+        >>> driver.browsing_context.navigate(context=context_id, url="https://www.selenium.dev")
+        >>> driver.browsing_context.capture_screenshot(context=context_id)
+        >>> driver.browsing_context.close(context_id)
+        """
+        if not self._websocket_connection:
+            self._start_bidi()
+
+        if self._browsing_context is None:
+            self._browsing_context = BrowsingContext(self._websocket_connection)
+
+        return self._browsing_context
 
     def _get_cdp_details(self):
         import json

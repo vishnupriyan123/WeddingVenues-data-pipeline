@@ -195,7 +195,7 @@ def url_changes(url: str) -> Callable[[WebDriver], bool]:
 
 
 def visibility_of_element_located(
-    locator: Tuple[str, str]
+    locator: Tuple[str, str],
 ) -> Callable[[WebDriverOrWebElement], Union[Literal[False], WebElement]]:
     """An expectation for checking that an element is present on the DOM of a
     page and visible. Visibility means that the element is not only displayed
@@ -337,7 +337,7 @@ def visibility_of_any_elements_located(locator: Tuple[str, str]) -> Callable[[We
 
 
 def visibility_of_all_elements_located(
-    locator: Tuple[str, str]
+    locator: Tuple[str, str],
 ) -> Callable[[WebDriverOrWebElement], Union[List[WebElement], Literal[False]]]:
     """An expectation for checking that all elements are present on the DOM of
     a page and visible. Visibility means that the elements are not only
@@ -486,7 +486,7 @@ def text_to_be_present_in_element_attribute(
 
 
 def frame_to_be_available_and_switch_to_it(
-    locator: Union[Tuple[str, str], str, WebElement]
+    locator: Union[Tuple[str, str], str, WebElement],
 ) -> Callable[[WebDriver], bool]:
     """An expectation for checking whether the given frame is available to
     switch to.
@@ -527,7 +527,7 @@ def frame_to_be_available_and_switch_to_it(
 
 
 def invisibility_of_element_located(
-    locator: Union[WebElement, Tuple[str, str]]
+    locator: Union[WebElement, Tuple[str, str]],
 ) -> Callable[[WebDriverOrWebElement], Union[WebElement, bool]]:
     """An Expectation for checking that an element is either invisible or not
     present on the DOM.
@@ -576,7 +576,7 @@ def invisibility_of_element_located(
 
 
 def invisibility_of_element(
-    element: Union[WebElement, Tuple[str, str]]
+    element: Union[WebElement, Tuple[str, str]],
 ) -> Callable[[WebDriverOrWebElement], Union[WebElement, bool]]:
     """An Expectation for checking that an element is either invisible or not
     present on the DOM.
@@ -602,7 +602,7 @@ def invisibility_of_element(
 
 
 def element_to_be_clickable(
-    mark: Union[WebElement, Tuple[str, str]]
+    mark: Union[WebElement, Tuple[str, str]],
 ) -> Callable[[WebDriverOrWebElement], Union[Literal[False], WebElement]]:
     """An Expectation for checking an element is visible and enabled such that
     you can click it.

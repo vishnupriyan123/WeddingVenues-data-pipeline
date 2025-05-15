@@ -19,6 +19,7 @@ from selenium.webdriver.chromium.remote_connection import ChromiumRemoteConnecti
 from selenium.webdriver.common.driver_finder import DriverFinder
 from selenium.webdriver.common.options import ArgOptions
 from selenium.webdriver.common.service import Service
+from selenium.webdriver.remote.command import Command
 from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 
 
@@ -148,6 +149,33 @@ class ChromiumDriver(RemoteWebDriver):
         """:Returns: An error message when there is any issue in a Cast
         session."""
         return self.execute("getIssueMessage")["value"]
+
+    @property
+    def log_types(self):
+        """Gets a list of the available log types.
+
+        Example:
+        --------
+        >>> driver.log_types
+        """
+        return self.execute(Command.GET_AVAILABLE_LOG_TYPES)["value"]
+
+    def get_log(self, log_type):
+        """Gets the log for a given log type.
+
+        Parameters:
+        -----------
+        log_type : str
+            - Type of log that which will be returned
+
+        Example:
+        --------
+        >>> driver.get_log('browser')
+        >>> driver.get_log('driver')
+        >>> driver.get_log('client')
+        >>> driver.get_log('server')
+        """
+        return self.execute(Command.GET_LOG, {"type": log_type})["value"]
 
     def set_sink_to_use(self, sink_name: str) -> dict:
         """Sets a specific sink, using its name, as a Cast session receiver

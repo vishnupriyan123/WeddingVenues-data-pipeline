@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/vishnupriyantv/Desktop/project restart/bridebook/bbselenium/venv/bin/python3.11" "$0" "$@"
-' '''
+#!/Users/vishnupriyantv/Desktop/project-restart/bridebook/bbselenium/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
