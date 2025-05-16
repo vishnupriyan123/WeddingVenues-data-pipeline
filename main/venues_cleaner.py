@@ -4,6 +4,7 @@ import re
 import traceback
 from datetime import datetime
 from utils.file_utils import setup_directories, log_message
+import csv
 
 # Setup directories and paths
 dirs = setup_directories()
@@ -61,8 +62,9 @@ try:
     df = df.fillna("N/A")
 
     # Save final cleaned CSV
-    df.to_csv(processed_file, index=False)
-    df.to_csv(backup_file, index=False)
+    df.to_csv(processed_file, index=False, quoting=csv.QUOTE_ALL, quotechar='"', escapechar='\\')
+    df.to_csv(backup_file, index=False, quoting=csv.QUOTE_ALL, quotechar='"', escapechar='\\')
+
 
     log_message(log_file, f"✅ Cleaned and saved {len(df)} venues.")
     print(f"✅ Cleaner ran successfully! Cleaned rows: {len(df)}")
