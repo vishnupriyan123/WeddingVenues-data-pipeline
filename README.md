@@ -66,8 +66,8 @@ WeddingVenues-data-pipeline/
 │   │   └── processed/        # Cleaned CSV
 │   ├── logs/                 # Run logs (scraper/cleaner)
 │   ├── plots/                # Static PNG charts
-│   ├── scraper.py            # Web scraper (Selenium)
-│   ├── cleaner.py            # Pandas cleaner
+│   ├── venues_scraper.py     # Web scraper (Selenium)
+│   ├── venues_cleaner.py     # Pandas cleaner
 │   ├── analyzer.py           # Static chart generator
 │   └── ai-data-viz.py        # AI-powered Streamlit UI
 ├── .github/workflows/
@@ -95,8 +95,8 @@ WeddingVenues-data-pipeline/
 
 - Scheduled to run daily at **4:30 AM UTC / 10:00 AM IST**
 - Executes:
-  - `main/scraper.py` → Scrapes latest venue listings
-  - `main/cleaner.py` → Cleans and enriches raw data
+  - `main/venues_scraper.py` → Scrapes latest venue listings
+  - `main/venues_cleaner.py` → Cleans and enriches raw data
 - Automatically uploads artifacts:
   - `hitched_venues.json`, `hitched_venues_YYYYMMDD.json`
   - `cleaned_venues.csv`, `cleaned_venues_YYYYMMDD.csv`
