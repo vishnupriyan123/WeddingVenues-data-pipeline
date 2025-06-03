@@ -31,11 +31,13 @@ jobs:
           mkdir -p main/data/processed
           mkdir -p main/logs
 
+
       - name: Run scraper
-        run: python main/scraper.py
+        run: python main/venues_scraper.py
+
 
       - name: Run cleaner
-        run: python main/cleaner.py
+        run: python main/venues_cleaner.py
 
       - name: Commit cleaned CSV to GitHub
         run: |

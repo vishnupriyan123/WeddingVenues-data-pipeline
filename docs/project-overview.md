@@ -114,8 +114,8 @@ This project follows a sprint-based workflow, loosely modeled after Agile princi
 ```bash
 WeddingVenues-data-pipeline/
 ├── main/
-│   ├── scraper.py
-│   ├── cleaner.py
+│   ├── venues_scraper.py
+│   ├── venues_cleaner.py
 │   ├── analyzer.py
 │   ├── ai-data-viz.py
 │   ├── scraper_region.py
